@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import HomeIcon from '@mui/icons-material/Home';
 
 function SideHeader() {
 
@@ -12,9 +13,21 @@ function SideHeader() {
         border-right: 1px solid #ccc;
     `
 
+    const SideDiv = styled.div`
+        display: flex;
+        margin: 40px 0;
+    `
+
     return (
         <SideHeader>
-            SideHeader
+            <SideDiv>
+                <div>
+                    <HomeIcon />
+                </div>
+                <div>
+                    Home
+                </div>
+            </SideDiv>
         </SideHeader>
     )
 }

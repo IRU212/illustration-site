@@ -24,6 +24,10 @@
         "vite": "^3.0.0"
     },
     "dependencies": {
+        "@emotion/react": "^11.10.5",
+        "@emotion/styled": "^11.10.5",
+        "@mui/icons-material": "^5.10.15",
+        "@mui/material": "^5.10.15",
         "node-sass": "^8.0.0",
         "styled-components": "^5.3.6"
     }
