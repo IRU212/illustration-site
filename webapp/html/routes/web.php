@@ -25,9 +25,16 @@ Route::get('/', function () {
     ]);
 });
 
+
+// HOMEページ
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+// プロフィールページ
+Route::get('/profile/{id}', function () {
+    return Inertia::render('Profile');
+})->middleware(['auth', 'verified'])->name('profile');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

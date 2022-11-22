@@ -11,21 +11,47 @@ function SideHeader() {
         top: 55px;
         left: 0;
         border-right: 1px solid #ccc;
+        padding: 30px 0;
     `
 
     const SideDiv = styled.div`
         display: flex;
-        margin: 40px 0;
+        margin: 70px 0 70px 55px;
+        line-height: 2rem;
+        text-align: center;
     `
+
+    // ログインユーザId
+    const userId = 1
 
     return (
         <SideHeader>
             <SideDiv>
                 <div>
-                    <HomeIcon />
+                    <HomeIcon
+                        style={{fontSize: "1.7rem"}}
+                    />
                 </div>
+                <div
+                    style={{fontSize: "1.5rem",fontWeight:600,margin:"4px 0 0 10px"}}
+                >
+                    <a href="http://localhost/dashboard">
+                        HOME
+                    </a>
+                </div>
+            </SideDiv>
+            <SideDiv>
                 <div>
-                    Home
+                    <HomeIcon
+                        style={{fontSize: "1.7rem"}}
+                    />
+                </div>
+                <div
+                    style={{fontSize: "1.5rem",fontWeight:600,margin:"4px 0 0 10px"}}
+                >
+                    <a href={`http://localhost/profile/${userId}`}>
+                        PROFILE
+                    </a>
                 </div>
             </SideDiv>
         </SideHeader>

@@ -12,7 +12,7 @@ class PostController extends Controller
         // model呼び出し
         $post = new Post();
 
-        $data = $post->with('user')->get();
+        $data = $post->with('user')->orderBy('id','desc')->get();
 
         return response()->json($data);
     }
