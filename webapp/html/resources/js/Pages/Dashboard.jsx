@@ -25,8 +25,28 @@ export default function Dashboard(props) {
         width: 100%;
         position: relative;
         border-bottom: 1px solid #ccc;
-        padding: 13px 28px;
+        padding: 19px 38px;
+        display: flex;
     `
+
+    const Icon = styled.div`
+        width: 50px;
+        height 50px;
+        border-radius: 50%;
+        margin: 0 50px 0 0;
+
+        img{
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+    `
+
+    const CommonName = styled.div`
+        font-size: 0.8rem;
+        font-weight: 700;
+    `
+
 
     const [data,setData] = useState()
 
@@ -52,7 +72,17 @@ export default function Dashboard(props) {
                 <CommonDiv>
                     { data?.map((item,index) =>
                         <CommonItem key={index}>
-                            { item.message }
+                            <Icon>
+                                <img src="https://webstatic.hoyoverse.com/upload/uploadstatic/contentweb/20210419/2021041914484954170.png" alt="" />
+                            </Icon>
+                            <div>
+                                <CommonName>
+                                    { item.user.name }
+                                </CommonName>
+                                <div>
+                                    { item.message }
+                                </div>
+                            </div>
                         </CommonItem>
                     ) }
                 </CommonDiv>
