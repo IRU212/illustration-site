@@ -36,6 +36,11 @@ Route::get('/profile/{id}', function () {
     return Inertia::render('Profile');
 })->middleware(['auth', 'verified'])->name('profile');
 
+// いいね一覧
+Route::get('/like/list/{id}', function () {
+    return Inertia::render('LikeList');
+})->middleware(['auth', 'verified'])->name('profile');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

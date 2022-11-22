@@ -1,4 +1,6 @@
 import React from 'react'
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import axios from 'axios';
 
 function UnLike(props) {
 
@@ -28,7 +30,9 @@ function UnLike(props) {
 
     return (
         <div onClick={UnLikeClick}>
-            UnLike
+            <FavoriteIcon
+                style={{color: "#EE55CC"}}
+            />
         </div>
     )
 }

@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React from 'react'
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 function Like(props) {
 
@@ -12,7 +13,7 @@ function Like(props) {
     const LikeClick = () => {
 
         const data = new FormData()
-        
+
         data.append("user_id",userId)
         data.append("post_id",postId)
 
@@ -28,7 +29,7 @@ function Like(props) {
 
     return (
         <div onClick={LikeClick}>
-            Like
+            <FavoriteIcon />
         </div>
     )
 }

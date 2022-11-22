@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Like\LisController;
 use App\Http\Controllers\Post\LikeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
@@ -41,3 +42,7 @@ Route::post('post/like/destory',[LikeController::class,'destory'])->name('post.l
 // profile
 
 Route::get('profile/{id}/index',[UserController::class,'index'])->name('profile.index');
+
+// いいね一覧
+
+Route::get('/like/list/{userId}/index',[LisController::class,'index'])->name('like.list.index');
