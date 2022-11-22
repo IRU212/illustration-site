@@ -13,18 +13,19 @@ export default function Dashboard(props) {
         position: absolute;
         top: 55px;
         left: 240px;
-        width: auto;
+        width: calc(100% - 240px);
     `
 
     const CommonDiv = styled.div`
-        width; 100%;
+        width: 100%;
         position: relative;
     `
 
     const CommonItem = styled.div`
-        width; 100%;
+        width: 100%;
         position: relative;
         border-bottom: 1px solid #ccc;
+        padding: 13px 28px;
     `
 
     const [data,setData] = useState()

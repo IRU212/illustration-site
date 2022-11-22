@@ -64,10 +64,18 @@ function Post(props) {
         setModalDisplay(!modalDisplay)
     }
 
+    const modalDisplayClick = (e) => {
+        if (e.currentTarget == e.target) {
+            setModalDisplay(!modalDisplay)
+        }
+    }
+
     return (
         <Post>
             { modalDisplay == true ?
-                <ModalMainDiv>
+                <ModalMainDiv onClick={
+                    (e) => modalDisplayClick(e)
+                }>
                     <ModalSubDiv>
                         <div>
                             <div>message</div>
