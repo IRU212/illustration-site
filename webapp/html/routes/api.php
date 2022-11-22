@@ -46,3 +46,6 @@ Route::get('profile/{id}/index',[UserController::class,'index'])->name('profile.
 // いいね一覧
 
 Route::get('/like/list/{userId}/index',[LisController::class,'index'])->name('like.list.index');
+
+
+// 

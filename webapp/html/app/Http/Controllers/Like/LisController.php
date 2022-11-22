@@ -13,8 +13,11 @@ class LisController extends Controller
     {
         $user = new User();
 
-        $data = $user->with('posts')->find($userId);
+        $posts = $user->with('posts')->find($userId)->posts;
 
-        return response()->json($data);
+        return response()->json([
+            'user' => User::find($userId),
+            'posts' => $posts
+        ]);
     }
 }
