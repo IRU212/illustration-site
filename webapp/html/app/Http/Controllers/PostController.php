@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\Post\Like;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -11,8 +12,12 @@ class PostController extends Controller
     {
         // model呼び出し
         $post = new Post();
+        $like = new Like();
 
-        $data = $post->with('user')->orderBy('id','desc')->get();
+        // ログインユーザがいいねした投稿を絞り込み
+        $data = $post->with('user')
+                     ->orderBy('id','desc')
+                     ->get();
 
         return response()->json($data);
     }

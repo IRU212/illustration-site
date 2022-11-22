@@ -6,6 +6,7 @@ import SideHeader from '@/Header/SideHeader';
 import styled from 'styled-components';
 import Post from '@/Post/Post';
 import axios from 'axios';
+import IsLike from '@/Content/IsLike';
 
 export default function Dashboard(props) {
 
@@ -47,6 +48,15 @@ export default function Dashboard(props) {
         font-weight: 700;
     `
 
+    const Like = styled.div`
+        position: absolute;
+        right: 26px;
+        top: 18px;
+
+        &:hover{
+            cursor: pointer;
+        }
+    `
 
     const [data,setData] = useState()
 
@@ -67,7 +77,9 @@ export default function Dashboard(props) {
     return (
         <div style={{width: "100%"}}>
             <Header />
-            <SideHeader />
+            <SideHeader
+                userId={userId}
+            />
             <Common>
                 <CommonDiv>
                     { data?.map((item,index) =>
@@ -83,6 +95,12 @@ export default function Dashboard(props) {
                                     { item.message }
                                 </div>
                             </div>
+                            <Like>
+                                <IsLike
+                                    userId={userId}
+                                    postId={item.id}
+                                />
+                            </Like>
                         </CommonItem>
                     ) }
                 </CommonDiv>

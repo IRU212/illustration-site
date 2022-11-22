@@ -74,7 +74,9 @@ function Profile(props) {
     return (
         <div style={{width: "100%"}}>
             <Header />
-            <SideHeader />
+            <SideHeader
+                userId={userId}
+            />
             <Common>
                 <BackImg>
                     <img src="https://pbs.twimg.com/media/FcM8hRhaMAA2zxi.jpg:large" alt="" />

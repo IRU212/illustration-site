@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import HomeIcon from '@mui/icons-material/Home';
 
-function SideHeader() {
+function SideHeader(props) {
 
     const SideHeader = styled.div`
         width: 240px;
@@ -22,7 +22,7 @@ function SideHeader() {
     `
 
     // ログインユーザId
-    const userId = 1
+    const userId = props.userId
 
     return (
         <SideHeader>
