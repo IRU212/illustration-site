@@ -22,7 +22,7 @@ class PostController extends Controller
         // model呼び出し
         $post = new Post();
 
-        $post->messgae = "aaaa";
+        $post->message = "aaaa";
         $post->image = "aaaa";
         $post->user_id  = $request->user_id;
 
