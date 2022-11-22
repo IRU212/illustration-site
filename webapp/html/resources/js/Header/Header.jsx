@@ -1,5 +1,4 @@
 import React from 'react'
-import styles from '../../css/header.module.scss'
 import styled from 'styled-components'
 
 function Header() {
@@ -14,7 +13,7 @@ function Header() {
     `
 
     return (
-        <Header className={styles.Header}>
+        <Header>
             Header
         </Header>
     )

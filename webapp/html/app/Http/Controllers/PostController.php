@@ -12,7 +12,7 @@ class PostController extends Controller
         // model呼び出し
         $post = new Post();
 
-        $data = $post->all();
+        $data = $post->with('user')->get();
 
         return response()->json($data);
     }
@@ -22,8 +22,8 @@ class PostController extends Controller
         // model呼び出し
         $post = new Post();
 
-        $post->message = "aaaa";
-        $post->image = "aaaa";
+        $post->message = $request->message;
+        $post->image = $request->image;
         $post->user_id  = $request->user_id;
 
         // 保存する
