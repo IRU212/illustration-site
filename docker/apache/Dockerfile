@@ -32,5 +32,5 @@ WORKDIR /var/www/html
 
 COPY ./webapp /var/www/html
 
-RUN chown www-data storage/ -R \
- && composer install
+# RUN chown www-data storage/ -R \
+#  && composer install
