@@ -1,6 +1,19 @@
 import React from 'react'
+import styled from 'styled-components'
+import axios from 'axios'
 
 function UnFollow(props) {
+
+    const UnFollowButton = styled.div`
+        padding: 5px 16px;
+        border-radius: 16px;
+        color: #fff;
+        background-color: #000;
+
+        &:hover{
+            cursor: pointer;
+        }
+    `
 
     // ログインユーザId
     const userId = props.userId
@@ -24,9 +37,9 @@ function UnFollow(props) {
     }
 
     return (
-        <div onClick={UnFollowClick}>
-            UnFollow
-        </div>
+        <UnFollowButton onClick={UnFollowClick}>
+            Following
+        </UnFollowButton>
     )
 }
 

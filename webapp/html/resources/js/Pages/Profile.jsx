@@ -55,6 +55,15 @@ function Profile(props) {
         font-weight: 600;
     `
 
+    const FollowDiv = styled.div`
+        position: absolute;
+        top: 50%;
+        right: 13vw;
+        transform: translateY(-50%);
+        font-size: 0.8rem;
+        font-weight: 600;
+    `
+
     // プロフィールデータ
     const [data,setData] = useState()
 
@@ -95,12 +104,12 @@ function Profile(props) {
                     <NameDiv>
                         { data?.name }
                     </NameDiv>
-                    <div>
+                    <FollowDiv>
                         <IsFollow
                             userId={userId}
                             profileId={profileId}
                         />
-                    </div>
+                    </FollowDiv>
                 </ProfileDiv>
             </Common>
         </div>

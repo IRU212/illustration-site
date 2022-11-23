@@ -1,7 +1,18 @@
 import axios from 'axios'
 import React from 'react'
+import styled from 'styled-components'
 
 function Follow(props) {
+
+    const FollowButton = styled.div`
+        border: 1px solid #000;
+        padding: 5px 16px;
+        border-radius: 16px;
+
+        &:hover{
+            cursor: pointer;
+        }
+    `
 
     // ログインユーザId
     const userId = props.userId
@@ -26,9 +37,9 @@ function Follow(props) {
     }
 
     return (
-        <div onClick={FollowClick}>
+        <FollowButton onClick={FollowClick}>
             Follow
-        </div>
+        </FollowButton>
     )
 }
 
