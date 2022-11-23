@@ -15,9 +15,26 @@ class LisController extends Controller
 
         $posts = $user->with('posts')->find($userId)->posts;
 
-        return response()->json([
-            'user' => User::find($userId),
-            'posts' => $posts
-        ]);
+        $data = [];
+
+        foreach ($posts as $index => $item) {
+
+            // 投稿したユーザのID
+            $user_id = $item->user_id;
+
+            // 配列を空に
+            $post_data = [];
+
+            // postを追加
+            $post_data['post'] = $item;
+
+            // post.user_idのユーザ情報を取得
+            $post_data['user'] = User::find($user_id);
+
+            // 配列の一次目に追加
+            $data[] = $post_data;
+        }
+
+        return response()->json($data);
     }
 }

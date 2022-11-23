@@ -69,7 +69,7 @@ export default function LikeList(props) {
             .get(`http://localhost/api/like/list/${userId}/index`)
             .then((res) => {
                 setUser(res.data?.user)
-                setData(res.data?.posts)
+                setData(res.data)
             })
             .catch((err) => {
                 console.log(err)
@@ -91,16 +91,16 @@ export default function LikeList(props) {
                             </Icon>
                             <div>
                                 <CommonName>
-                                    { user.name }
+                                    { item.user.name }
                                 </CommonName>
                                 <div>
-                                    { item.message }
+                                    { item.post.message }
                                 </div>
                             </div>
                             <Like>
                                 <IsLike
                                     userId={userId}
-                                    postId={item.id}
+                                    postId={item.post.id}
                                 />
                             </Like>
                         </CommonItem>
