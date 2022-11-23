@@ -1,3 +1,4 @@
+import IsFollow from '@/Content/IsFollow'
 import Header from '@/Header/Header'
 import SideHeader from '@/Header/SideHeader'
 import axios from 'axios'
@@ -57,12 +58,18 @@ function Profile(props) {
     // プロフィールデータ
     const [data,setData] = useState()
 
+    // 現在のURL
+    const locationUrl = location.href
+
+    // プロフィールIDを取得
+    const profileId = locationUrl.split("/")[4]
+
     // ログインユーザID
     const userId = props.auth.user.id
 
     useEffect(() => {
         axios
-            .get(`http://localhost/api/profile/${userId}/index`)
+            .get(`http://localhost/api/profile/${profileId}/index`)
             .then((res) => {
                 setData(res.data)
             })
@@ -88,6 +95,12 @@ function Profile(props) {
                     <NameDiv>
                         { data?.name }
                     </NameDiv>
+                    <div>
+                        <IsFollow
+                            userId={userId}
+                            profileId={profileId}
+                        />
+                    </div>
                 </ProfileDiv>
             </Common>
         </div>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FollowController;
 use App\Http\Controllers\Like\LisController;
 use App\Http\Controllers\Post\LikeController;
 use App\Http\Controllers\PostController;
@@ -55,3 +56,12 @@ Route::get('/like/list/{userId}/index',[LisController::class,'index'])->name('li
 
 // 検索機能
 Route::get('/search/{keyword}/index',[SearchController::class,'index'])->name('search.index');
+
+// フォロー機能
+Route::get('follow/{userId}/{profileId}/index',[FollowController::class,'index'])->name('follow.index');
+
+Route::get('follow/store',[FollowController::class,'store'])->name('follow.store');
+Route::post('follow/store',[FollowController::class,'store'])->name('follow.store');
+
+Route::get('follow/destory',[FollowController::class,'destory'])->name('follow.destory');
+Route::post('follow/destory',[FollowController::class,'destory'])->name('follow.destory');

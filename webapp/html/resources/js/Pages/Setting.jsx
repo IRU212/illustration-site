@@ -11,6 +11,11 @@ function Setting(props) {
         top: 55px;
         left: 240px;
         width: calc(100% - 240px);
+        padding: 30px 0 0 0;
+    `
+
+    const CommonDiv = styled.div`
+        margin: 20px 0 20px 55px;
     `
 
     // ログインユーザID
@@ -23,16 +28,16 @@ function Setting(props) {
                 userId={userId}
             />
             <Common>
-                <div>
+                <CommonDiv>
                     <Link href={route('logout')}>
                         ログアウト
                     </Link>
-                </div>
-                <div>
+                </CommonDiv>
+                <CommonDiv>
                     <a href="">
                         アカウント削除
                     </a>
-                </div>
+                </CommonDiv>
             </Common>
         </div>
     )

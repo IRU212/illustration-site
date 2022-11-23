@@ -1,6 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 import HomeIcon from '@mui/icons-material/Home';
+import SearchIcon from '@mui/icons-material/Search';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import SettingsIcon from '@mui/icons-material/Settings';
 
 function SideHeader(props) {
 
@@ -16,7 +20,7 @@ function SideHeader(props) {
 
     const SideDiv = styled.div`
         display: flex;
-        margin: 70px 0 70px 55px;
+        margin: 75px 0 75px 52px;
         line-height: 2rem;
         text-align: center;
     `
@@ -33,7 +37,7 @@ function SideHeader(props) {
                     />
                 </div>
                 <div
-                    style={{fontSize: "1.5rem",fontWeight:600,margin:"4px 0 0 10px"}}
+                    style={{fontSize: "1.5rem",fontWeight:600,margin:"2px 0 0 10px"}}
                 >
                     <a href="http://localhost/dashboard">
                         HOME
@@ -42,12 +46,12 @@ function SideHeader(props) {
             </SideDiv>
             <SideDiv>
                 <div>
-                    <HomeIcon
+                    <AccountCircleIcon
                         style={{fontSize: "1.7rem"}}
                     />
                 </div>
                 <div
-                    style={{fontSize: "1.5rem",fontWeight:600,margin:"4px 0 0 10px"}}
+                    style={{fontSize: "1.5rem",fontWeight:600,margin:"2px 0 0 10px"}}
                 >
                     <a href={`http://localhost/profile/${userId}`}>
                         PROFILE
@@ -56,12 +60,12 @@ function SideHeader(props) {
             </SideDiv>
             <SideDiv>
                 <div>
-                    <HomeIcon
+                    <SearchIcon
                         style={{fontSize: "1.7rem"}}
                     />
                 </div>
                 <div
-                    style={{fontSize: "1.5rem",fontWeight:600,margin:"4px 0 0 10px"}}
+                    style={{fontSize: "1.5rem",fontWeight:600,margin:"2px 0 0 10px"}}
                 >
                     <a href={`http://localhost/search`}>
                         SEARCH
@@ -70,12 +74,12 @@ function SideHeader(props) {
             </SideDiv>
             <SideDiv>
                 <div>
-                    <HomeIcon
+                    <FavoriteBorderIcon
                         style={{fontSize: "1.7rem"}}
                     />
                 </div>
                 <div
-                    style={{fontSize: "1.5rem",fontWeight:600,margin:"4px 0 0 10px"}}
+                    style={{fontSize: "1.5rem",fontWeight:600,margin:"2px 0 0 10px"}}
                 >
                     <a href={`http://localhost/like/list/${userId}`}>
                         LIKE LIST
@@ -84,12 +88,12 @@ function SideHeader(props) {
             </SideDiv>
             <SideDiv>
                 <div>
-                    <HomeIcon
+                    <SettingsIcon
                         style={{fontSize: "1.7rem"}}
                     />
                 </div>
                 <div
-                    style={{fontSize: "1.5rem",fontWeight:600,margin:"4px 0 0 10px"}}
+                    style={{fontSize: "1.5rem",fontWeight:600,margin:"2px 0 0 10px"}}
                 >
                     <a href={`http://localhost/setting`}>
                         SETTING
