@@ -63,6 +63,20 @@ function SideHeader(props) {
                 <div
                     style={{fontSize: "1.5rem",fontWeight:600,margin:"4px 0 0 10px"}}
                 >
+                    <a href={`http://localhost/search`}>
+                        SEARCH
+                    </a>
+                </div>
+            </SideDiv>
+            <SideDiv>
+                <div>
+                    <HomeIcon
+                        style={{fontSize: "1.7rem"}}
+                    />
+                </div>
+                <div
+                    style={{fontSize: "1.5rem",fontWeight:600,margin:"4px 0 0 10px"}}
+                >
                     <a href={`http://localhost/like/list/${userId}`}>
                         LIKE LIST
                     </a>

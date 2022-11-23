@@ -36,16 +36,25 @@ Route::get('/profile/{id}', function () {
     return Inertia::render('Profile');
 })->middleware(['auth', 'verified'])->name('profile');
 
-// いいね一覧
+// いいね一覧ページ
 Route::get('/like/list/{id}', function () {
     return Inertia::render('LikeList');
 })->middleware(['auth', 'verified'])->name('profile');
 
-// 設定画面
-// いいね一覧
+// 検索ページ
+Route::get('search', function () {
+    return Inertia::render('Search');
+})->middleware(['auth', 'verified'])->name('profile');
+
+Route::get('search/{keyword}', function () {
+    return Inertia::render('Search');
+})->middleware(['auth', 'verified'])->name('profile');
+
+// 設定画面ページ
 Route::get('setting', function () {
     return Inertia::render('Setting');
 })->middleware(['auth', 'verified'])->name('profile');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

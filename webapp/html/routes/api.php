@@ -4,6 +4,7 @@ use App\Http\Controllers\Like\LisController;
 use App\Http\Controllers\Post\LikeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -39,6 +40,10 @@ Route::post('post/like/store',[LikeController::class,'store'])->name('post.like.
 Route::get('post/like/destory',[LikeController::class,'destory'])->name('post.like.destory');
 Route::post('post/like/destory',[LikeController::class,'destory'])->name('post.like.destory');
 
+// post検索機能
+Route::get('post/like/destory',[LikeController::class,'destory'])->name('post.like.destory');
+Route::post('post/like/destory',[LikeController::class,'destory'])->name('post.like.destory');
+
 // profile
 
 Route::get('profile/{id}/index',[UserController::class,'index'])->name('profile.index');
@@ -48,4 +53,5 @@ Route::get('profile/{id}/index',[UserController::class,'index'])->name('profile.
 Route::get('/like/list/{userId}/index',[LisController::class,'index'])->name('like.list.index');
 
 
-// 
+// 検索機能
+Route::get('/search/{keyword}/index',[SearchController::class,'index'])->name('search.index');
