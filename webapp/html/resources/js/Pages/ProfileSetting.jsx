@@ -36,11 +36,11 @@ function ProfileSetting(props) {
 
         const data = new FormData()
 
-        data.append("name",name)
-        data.append("back_path",backImage)
+        data.append("name","name")
+        // data.append("back_path",backImage)
 
         axios
-            .post(`../api/profile/${userId}/update`,data,{
+            .post(`http://localhost/api/profile/20/update`,data,{
                 'headers': {
                     'content-type': 'multipart/form-data',
                 }
@@ -52,6 +52,8 @@ function ProfileSetting(props) {
                 console.log(err)
             })
     }
+
+    console.log(name)
 
     return (
         <div style={{width: "100%"}}>
@@ -100,7 +102,7 @@ function ProfileSetting(props) {
                             }}>
                                 name
                             </div>
-                            <input type="text" value={name} onChange={NameChange} />
+                            <input type="text" name="name" value={name} onChange={NameChange} />
                         </div>
                     </div>
                     <SaveButton onClick={SaveClick}>

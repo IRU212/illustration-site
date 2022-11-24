@@ -65,7 +65,8 @@ export default function Dashboard(props) {
 
     useEffect(() => {
         axios
-            .get("https://illustration-site.herokuapp.com/api/post/index")
+            .get("api/post/index")
+            // .get("https://illustration-site.herokuapp.com/api/post/index")
             .then((res) => {
                 setData(res.data)
             })
