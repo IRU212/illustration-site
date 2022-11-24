@@ -19,13 +19,19 @@ class UserController extends Controller
         $user = User::find($id);
 
         // 名前を変更
-        $user->name = $request->name;
+        if ($request->has('name')) {
+            $user->name = $request->name;
+        }
 
         // アイコン画像を変更
-        $user->icon_path = base64_encode(file_get_contents($request->icon_path->getRealPath()));
+        if ($request->has('icon_path')) {
+            $user->icon_path = base64_encode(file_get_contents($request->icon_path->getRealPath()));
+        }
 
         // 背景画像を変更
-        $user->back_path = base64_encode(file_get_contents($request->back_path->getRealPath()));
+        if ($request->has('back_path')) {
+            $user->back_path = base64_encode(file_get_contents($request->back_pathh->getRealPath()));
+        }
 
         $user->save();
 

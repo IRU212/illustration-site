@@ -1,7 +1,7 @@
 import Header from '@/Header/Header'
 import SideHeader from '@/Header/SideHeader'
 import axios from 'axios'
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import styled from 'styled-components'
 
 function ProfileSetting(props) {
@@ -24,16 +24,37 @@ function ProfileSetting(props) {
     // ログインユーザID
     const userId = props.auth.user.id
 
+    // 画像プレビュー機能
+    const backImg = useRef()
+    const iconImg = useRef()
+
+    // inputデータ
     const NameChange = (e) => {
         setName(e.target.value)
     }
 
     const IconImageChange = (e) => {
         setIconImage(e.target.files[0])
+
+        // 画像プレビュー機能
+        iconImg.current.title = e.target.files[0].name
+        const reader = new FileReader()
+        reader.onload = (e) => {
+            iconImg.current.setAttribute('src',e.target.result)
+        }
+        reader.readAsDataURL(e.target.files[0])
     }
 
     const BackImageChange = (e) => {
         setBackImage(e.target.files[0])
+
+        // 画像プレビュー機能
+        backImg.current.title = e.target.files[0].name
+        const reader = new FileReader()
+        reader.onload = (e) => {
+            backImg.current.setAttribute('src',e.target.result)
+        }
+        reader.readAsDataURL(e.target.files[0])
     }
 
     const SaveClick = () => {
@@ -54,7 +75,7 @@ function ProfileSetting(props) {
             })
     }
 
-    console.log(name)
+    console.log(iconImg)
 
     return (
         <div style={{width: "100%"}}>
@@ -83,7 +104,10 @@ function ProfileSetting(props) {
                             width: "550px",
                             height: "300px",
                         }}>
-                            <img src="" alt="" />
+                            <img ref={backImg} alt="" style={{
+                                width: "100%",
+                                height: "100%",
+                            }} />
                         </div>
                     </label>
                     <input type="file" onChange={BackImageChange} multiple accept="image/*" id="back_image" style={{display: "none"}} />
@@ -97,8 +121,14 @@ function ProfileSetting(props) {
                                 width: "120px",
                                 height: "120px",
                                 borderRadius: "50%",
-                                margin: "0 70px 0 80px"
+                                margin: "0 70px 0 80px",
+
                             }}>
+                                <img ref={iconImg} alt="" style={{
+                                    width: "100%",
+                                    height: "100%",
+                                    borderRadius: "50%"
+                                }} />
                             </div>
                         </label>
                         <input type="file" onChange={IconImageChange} multiple accept="image/*" id="icon_image" style={{display: "none"}} />
