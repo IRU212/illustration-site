@@ -18,6 +18,14 @@ class UserController extends Controller
     {
         $user = User::find($id);
 
-        
+        // 名前を変更
+        $user->name = $request->name;
+
+        // dd($request->back_image);
+
+        // 背景画像を変更
+        $user->back_path = base64_encode(file_get_contents($request->back_path->getRealPath()));
+
+        $user->save();
     }
 }

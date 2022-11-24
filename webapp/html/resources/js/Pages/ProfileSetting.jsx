@@ -1,5 +1,6 @@
 import Header from '@/Header/Header'
 import SideHeader from '@/Header/SideHeader'
+import axios from 'axios'
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
@@ -17,6 +18,7 @@ function ProfileSetting(props) {
     `
 
     const [name,setName] = useState()
+    const [backImage,setBackImage] = useState()
 
     // ログインユーザID
     const userId = props.auth.user.id
@@ -25,8 +27,30 @@ function ProfileSetting(props) {
         setName(e.target.value)
     }
 
+    const BackImageChange = (e) => {
+        setBackImage(e.target.files[0])
+        console.log(e.target.files[0])
+    }
+
     const SaveClick = () => {
 
+        const data = new FormData()
+
+        data.append("name",name)
+        data.append("back_path",backImage)
+
+        axios
+            .post(`../api/profile/${userId}/update`,data,{
+                'headers': {
+                    'content-type': 'multipart/form-data',
+                }
+            })
+            .then(() => {
+                // location.reload()
+            })
+            .catch((err) => {
+                console.log(err)
+            })
     }
 
     return (
@@ -55,7 +79,7 @@ function ProfileSetting(props) {
                         width: "550px",
                         height: "300px",
                     }}>
-
+                        <input type="file" onChange={BackImageChange} multiple accept="image/*" enctype="multipart/form-data" id="" />
                     </div>
                     <div style={{
                         display:"flex",
