@@ -6,6 +6,7 @@ import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import SettingsIcon from '@mui/icons-material/Settings';
 import Count from './Profile/Count'
+import PersonIcon from '@mui/icons-material/Person';
 
 function Profile(props) {
 
@@ -35,7 +36,6 @@ function Profile(props) {
     const Icon = styled.div`
         width: 110px;
         height: 110px;
-        background-color: #ccc;
         border-radius: 50%;
         position: absolute;
         top: -50px;
@@ -87,9 +87,15 @@ function Profile(props) {
     // ログインユーザID
     const userId = props.auth.user.id
 
+    // ログインユーザ背景画像base64取得
+    const userBack = props.auth.user.back_path
+
+    // ログインユーザアイコンbase64取得
+    const userIcon = props.auth.user.icon_path
+
     useEffect(() => {
         axios
-            .get(`https://illustration-site.herokuapp.com/api/profile/${profileId}/index`)
+            .get(`../api/profile/${profileId}/index`)
             .then((res) => {
                 setData(res.data)
             })
@@ -106,11 +112,49 @@ function Profile(props) {
             />
             <Common>
                 <BackImg>
-                    <img src="https://pbs.twimg.com/media/FcM8hRhaMAA2zxi.jpg:large" alt="" />
+                    { userBack == null ?
+                        <div style={{
+                            width: "100%",
+                            height: "100%",
+                            backgroundColor: "#ccc",
+                            position: "relative"
+                        }}>
+                        </div>
+                        :
+                        <img src={`data:image/png;base64,${userBack}`} alt="aaaa" style={{
+                            width: "100%",
+                            height: "100%",
+                        }} />
+                    }
                 </BackImg>
                 <ProfileDiv>
                     <Icon>
-                        <img src="https://assets.nakamap.com/img/grp/03f0f08fae69e50930377d8b10ad3be90f48f403_raw.jpg" alt="" />
+                        { userIcon == null ?
+                            <div style={{
+                                width: "100%",
+                                height: "100%",
+                                border: "1px solid #ccc",
+                                borderRadius: "50%",
+                                backgroundColor: "#fff"
+                            }}>
+                                <PersonIcon
+                                    style={{
+                                        color: "#ccc",
+                                        position: "absolute",
+                                        top: "50%",
+                                        left: "50%",
+                                        transform: "translate(-50%,-50%)",
+                                        fontSize: "6.5rem"
+                                    }}
+                                />
+                            </div>
+                            :
+                            <img src={`data:image/png;base64,${userBack}`} alt="aaaa" style={{
+                                width: "100%",
+                                height: "100%",
+                                borderRadius: "50%"
+                            }} />
+                        }
                     </Icon>
                     <NameDiv>
                         { data?.name }

@@ -38,6 +38,11 @@ function Setting(props) {
                     アカウント設定
                 </TitleDiv>
                 <CommonDiv>
+                    <a href="setting/profile">
+                        プロフィール設定
+                    </a>
+                </CommonDiv>
+                <CommonDiv>
                     <Link href={route('logout')}>
                         ログアウト
                     </Link>

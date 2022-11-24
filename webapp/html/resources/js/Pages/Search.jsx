@@ -84,7 +84,7 @@ function Search(props) {
 
     useEffect(() => {
         axios
-            .get(`https://illustration-site.herokuapp.com/api/search/${keywordSearch}/index`)
+            .get(`../api/search/${keywordSearch}/index`)
             .then((res) => {
                 setData(res.data)
             })

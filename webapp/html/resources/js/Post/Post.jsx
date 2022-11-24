@@ -71,12 +71,33 @@ function Post(props) {
     }
 
     return (
-        <Post>
+        <div style={{
+            position: "fixed",
+            bottom: "7vh",
+            right: "7vw",
+        }}>
             { modalDisplay == true ?
-                <ModalMainDiv onClick={
-                    (e) => modalDisplayClick(e)
+                <div
+                    style={{
+                        position: "fixed",
+                        top: "0",
+                        left: "0",
+                        width: "100%",
+                        height: "100vh",
+                        backgroundColor: "#000",
+                        opacity: "0.6",
+                    }}
+                    onClick={
+                        (e) => modalDisplayClick(e)
                 }>
-                    <ModalSubDiv>
+                    <div style={{
+                        width: "600px",
+                        position: "absolute",
+                        backgroundColor: "#fff",
+                        top: "50%",
+                        left: "50%",
+                        transform: "translate(-50%,-50%)",
+                    }}>
                         <div>
                             <div>message</div>
                             <div>
@@ -86,15 +107,15 @@ function Post(props) {
                         <div onClick={PostClick}>
                             投稿
                         </div>
-                    </ModalSubDiv>
-                </ModalMainDiv>
+                    </div>
+                </div>
                 :
                 ""
             }
             <div onClick={ModalClick}>
                 ＋
             </div>
-        </Post>
+        </div>
     )
 }
 

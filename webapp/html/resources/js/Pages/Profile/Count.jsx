@@ -15,7 +15,7 @@ function Count(props) {
 
     useLayoutEffect(() => {
         axios
-            .get(`https://illustration-site.herokuapp.com/api/count/${profileId}/index`)
+            .get(`http://localhost/api/count/${profileId}/index`)
             .then((res) => {
                 seData(res.data)
             })
