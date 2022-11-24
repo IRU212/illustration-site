@@ -71,3 +71,7 @@ Route::post('follow/destory',[FollowController::class,'destory'])->name('follow.
 
 // フォロー・フォロワーカウント
 Route::get('count/{userId}/index',[CountController::class,'index'])->name('follow.count.index');
+
+// アカウント削除機能
+Route::get('user/delete',[UserController::class,'delete'])->name('user.delete');
+Route::post('user/delete',[UserController::class,'delete'])->name('user.delete');

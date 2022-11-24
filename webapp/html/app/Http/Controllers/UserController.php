@@ -34,6 +34,12 @@ class UserController extends Controller
         }
 
         $user->save();
+    }
 
+    public function delete(Request $request)
+    {
+        $user_id = $request->user_id;
+
+        $user = User::find($user_id)->delete();
     }
 }

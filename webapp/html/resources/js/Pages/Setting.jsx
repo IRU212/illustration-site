@@ -3,6 +3,7 @@ import SideHeader from '@/Header/SideHeader'
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from '@inertiajs/inertia-react';
+import axios from 'axios';
 
 function Setting(props) {
 
@@ -27,6 +28,19 @@ function Setting(props) {
     // ログインユーザID
     const userId = props.auth.user.id
 
+    const DeleteClick = () => {
+        axios
+            .post("api/user/delete",{
+                'user_id': userId
+            })
+            .then(() => {
+                location.reload()
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    }
+
     return (
         <div style={{width: "100%"}}>
             <Header />
@@ -47,10 +61,8 @@ function Setting(props) {
                         ログアウト
                     </Link>
                 </CommonDiv>
-                <CommonDiv>
-                    <a href="">
-                        アカウント削除
-                    </a>
+                <CommonDiv onClick={DeleteClick}>
+                    アカウント削除
                 </CommonDiv>
             </Common>
         </div>

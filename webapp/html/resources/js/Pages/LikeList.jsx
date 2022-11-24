@@ -7,6 +7,7 @@ import styled from 'styled-components';
 import Post from '@/Post/Post';
 import axios from 'axios';
 import IsLike from '@/Content/IsLike';
+import PersonIcon from '@mui/icons-material/Person';
 
 export default function LikeList(props) {
 
@@ -35,6 +36,8 @@ export default function LikeList(props) {
         height 50px;
         border-radius: 50%;
         margin: 0 50px 0 0;
+        position: relative;
+        border: 1px solid #ccc;
 
         img{
             width: 100%;
@@ -86,9 +89,28 @@ export default function LikeList(props) {
                 <CommonDiv>
                     { data?.map((item,index) =>
                         <CommonItem key={index}>
-                            <Icon>
-                                <img src="https://webstatic.hoyoverse.com/upload/uploadstatic/contentweb/20210419/2021041914484954170.png" alt="" />
-                            </Icon>
+                            <a href={`http://localhost/profile/${item.user.id}`}>
+                                <Icon>
+                                    { item.user.icon_path == null ?
+                                        <PersonIcon
+                                            style={{
+                                                color: "#ccc",
+                                                position: "absolute",
+                                                top: "50%",
+                                                left: "50%",
+                                                transform: "translate(-50%,-50%)",
+                                                fontSize: "34px",
+                                        }}
+                                    />
+                                        :
+                                        <img src={`data:image/png;base64,${item.user.icon_path}`} alt="" style={{
+                                            width: "100%",
+                                            height: "100%",
+                                            borderRadius: "50%",
+                                        }} />
+                                    }
+                                </Icon>
+                            </a>
                             <div>
                                 <CommonName>
                                     { item.user.name }
