@@ -96,7 +96,9 @@ function ProfileSetting(props) {
 
     return (
         <div style={{width: "100%"}}>
-            <Header />
+            <Header
+                userInfo={props.auth.user}
+            />
             <SideHeader
                 userId={userId}
             />
@@ -157,7 +159,7 @@ function ProfileSetting(props) {
                                 margin: "0 70px 0 80px",
                                 position: "relative",
                                 border: "1px solid #aaa",
-                                cursor: "pointer"
+                                cursor: "pointer",
                             }}>
                                 {/* エラー防止読み込み用 */}
                                 <img ref={iconImg} style={{display: "none"}} />
@@ -177,9 +179,12 @@ function ProfileSetting(props) {
                                             />
                                             :
                                             <img src={`data:image/png;base64,${userIcon}`} alt="" style={{
-                                                width: "100%",
-                                                height: "100%",
+                                                width: "120px",
+                                                height: "120px",
                                                 borderRadius: "50%",
+                                                verticalAlign: "bottom",
+                                                boxSizing: "borderBox",
+                                                display: "block",
                                             }} />
                                         }
                                     </div>
@@ -188,6 +193,7 @@ function ProfileSetting(props) {
                                         width: "100%",
                                         height: "100%",
                                         borderRadius: "50%",
+                                        verticalAlign: "bottom"
                                     }} />
                                 }
                             </div>

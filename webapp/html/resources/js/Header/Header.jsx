@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
+import PersonIcon from '@mui/icons-material/Person';
 
-function Header() {
+function Header(props) {
 
     const Header = styled.div`
         width: 100%;
@@ -22,6 +23,26 @@ function Header() {
         transform: translateY(-50%);
     `
 
+    const Icon = styled.div`
+        background-color: #fff;
+        position: absolute;
+        top: 50%;
+        right: 6vw;
+        transform: translateY(-50%);
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+
+        img{
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+    `
+
+    // ログインユーザデータ
+    const userInfo = props.userInfo
+
     return (
         <Header>
             <Home>
@@ -29,6 +50,23 @@ function Header() {
                     Home
                 </a>
             </Home>
+            <a href={`http://localhost/profile/${userInfo.id}`}>
+                <Icon>
+                    { userInfo.icon_path == null ?
+                        <PersonIcon
+                            style={{
+                                color: "#ccc",
+                                position: "absolute",
+                                top: "50%",
+                                left: "50%",
+                                transform: "translate(-50%,-50%)",
+                                fontSize: "34px",
+                        }} />
+                        :
+                        <img src={`data:image/png;base64,${userInfo.icon_path}`} alt="" />
+                    }
+                </Icon>
+            </a>
         </Header>
     )
 }

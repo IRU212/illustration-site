@@ -81,7 +81,9 @@ export default function LikeList(props) {
 
     return (
         <div style={{width: "100%"}}>
-            <Header />
+            <Header
+                userInfo={props.auth.user}
+            />
             <SideHeader
                 userId={userId}
             />

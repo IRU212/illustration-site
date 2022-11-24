@@ -95,7 +95,9 @@ function Search(props) {
 
     return (
         <div style={{width: "100%"}}>
-            <Header />
+            <Header
+                userInfo={props.auth.user}
+            />
             <SideHeader
                 userId={userId}
             />
