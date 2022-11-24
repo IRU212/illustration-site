@@ -1,5 +1,5 @@
 import axios from 'axios'
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import styled from 'styled-components'
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 
@@ -93,13 +93,13 @@ function Post(props) {
                         borderRadius: "10px"
                     }}>
                         <div>
-                            <div style={{
-                                margin: "10px 0 20px 0"
-                             }}>
-                                message
-                            </div>
                             <div>
-                                <input type="text" value={message} onChange={MessageChnage} />
+                                <input type="text" value={message} onChange={MessageChnage} style={{
+                                    outline: "none",
+                                    border: "none",
+                                    borderBottom: "1px solid #ccc",
+                                    width: "500px"
+                                }} />
                             </div>
                         </div>
                         <PostSaveButton onClick={PostClick}>

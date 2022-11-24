@@ -123,9 +123,9 @@ function Search(props) {
                             top: "50%",
                             left: "50%",
                             transform: "translate(-50%,-50%)",
-                            paddingLeft: "40px",
+                            paddingLeft: "42px",
                     }}/>
-                    <a href={`/search/${keyword}`}>
+                    <a href={`/search/${keyword}?`}>
                         <SearchIcon style={{
                             position:"absolute",
                             top: "50%",
@@ -143,27 +143,37 @@ function Search(props) {
                         </SearchNoneDiv>
                         :
                         <div>
-                            { data?.map((item,index) =>
-                                <CommonItem key={index}>
-                                    <Icon>
-                                        <img src="https://webstatic.hoyoverse.com/upload/uploadstatic/contentweb/20210419/2021041914484954170.png" alt="" />
-                                    </Icon>
-                                    <div>
-                                        <CommonName>
-                                            { item.user.name }
-                                        </CommonName>
-                                        <div>
-                                            { item.message }
-                                        </div>
-                                    </div>
-                                    <Like>
-                                        <IsLike
-                                            userId={userId}
-                                            postId={item.id}
-                                        />
-                                    </Like>
-                                </CommonItem>
-                            ) }
+                            { data?.length == 0 ?
+                                <SearchNoneDiv>
+                                    <SearchNoneMessage>
+                                        見つかりませんでした
+                                    </SearchNoneMessage>
+                                </SearchNoneDiv>
+                                :
+                                <div>
+                                    { data?.map((item,index) =>
+                                        <CommonItem key={index}>
+                                            <Icon>
+                                                <img src="https://webstatic.hoyoverse.com/upload/uploadstatic/contentweb/20210419/2021041914484954170.png" alt="" />
+                                            </Icon>
+                                            <div>
+                                                <CommonName>
+                                                    { item.user.name }
+                                                </CommonName>
+                                                <div>
+                                                    { item.message }
+                                                </div>
+                                            </div>
+                                            <Like>
+                                                <IsLike
+                                                    userId={userId}
+                                                    postId={item.id}
+                                                />
+                                            </Like>
+                                        </CommonItem>
+                                    ) }
+                                </div>
+                            }
                         </div>
                     }
                 </CommonDiv>

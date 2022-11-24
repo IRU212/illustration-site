@@ -1,0 +1,15 @@
+version: 2.1
+jobs:
+  working_directory: ~/Illustration/webapp/html
+  build:
+    docker:
+      - image: circleci/php:8.0-node-browsers
+    steps:
+      - checkout
+      - run: sudo composer self-update 
+      - run: composer install -n --prefer-dist --working-dir=./webapp/html
+      # - run: npm ci --working-dir=./laravel-project
+      # - run: npm run dev --working-dir=./laravel-project
+      - run:
+          command: php ./webapp/html/vendor/bin/phpunit --configuration=./webapp/html/phpunit.xml
+      # - run: ls
