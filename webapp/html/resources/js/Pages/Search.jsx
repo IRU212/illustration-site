@@ -4,6 +4,7 @@ import SideHeader from '@/Header/SideHeader';
 import styled from 'styled-components';
 import axios from 'axios';
 import IsLike from '@/Content/IsLike';
+import SearchIcon from '@mui/icons-material/Search';
 
 function Search(props) {
 
@@ -122,7 +123,16 @@ function Search(props) {
                             top: "50%",
                             left: "50%",
                             transform: "translate(-50%,-50%)",
+                            paddingLeft: "40px",
                     }}/>
+                    <a href={`/search/${keyword}`}>
+                        <SearchIcon style={{
+                            position:"absolute",
+                            top: "50%",
+                            left: "8%",
+                            transform: "translate(0,-50%)",
+                        }} />
+                    </a>
                 </form>
                 <CommonDiv>
                     { keywordSearch == undefined ?
