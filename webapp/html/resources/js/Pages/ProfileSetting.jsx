@@ -18,6 +18,7 @@ function ProfileSetting(props) {
     `
 
     const [name,setName] = useState()
+    const [iconImage,setIconImage] = useState()
     const [backImage,setBackImage] = useState()
 
     // ログインユーザID
@@ -27,26 +28,26 @@ function ProfileSetting(props) {
         setName(e.target.value)
     }
 
+    const IconImageChange = (e) => {
+        setIconImage(e.target.files[0])
+    }
+
     const BackImageChange = (e) => {
         setBackImage(e.target.files[0])
-        console.log(e.target.files[0])
     }
 
     const SaveClick = () => {
 
         const data = new FormData()
 
-        data.append("name","name")
-        // data.append("back_path",backImage)
+        data.append("name",name)
+        data.append("back_path",backImage)
+        data.append("icon_path",iconImage)
 
         axios
-            .post(`http://localhost/api/profile/20/update`,data,{
-                'headers': {
-                    'content-type': 'multipart/form-data',
-                }
-            })
+            .post(`http://localhost/api/profile/20/update`,data)
             .then(() => {
-                // location.reload()
+                location.reload()
             })
             .catch((err) => {
                 console.log(err)
@@ -76,26 +77,31 @@ function ProfileSetting(props) {
                     left: "50%",
                     transform: "translateX(-50%)"
                 }}>
-                    <div style={{
-                        backgroundColor: "#ccc",
-                        width: "550px",
-                        height: "300px",
-                    }}>
-                        <input type="file" onChange={BackImageChange} multiple accept="image/*" enctype="multipart/form-data" id="" />
-                    </div>
+                    <label htmlFor="back_image">
+                        <div style={{
+                            backgroundColor: "#ccc",
+                            width: "550px",
+                            height: "300px",
+                        }}>
+                            <img src="" alt="" />
+                        </div>
+                    </label>
+                    <input type="file" onChange={BackImageChange} multiple accept="image/*" id="back_image" style={{display: "none"}} />
                     <div style={{
                         display:"flex",
                         margin: "50px 0 0 0"
                     }}>
-                        <div style={{
-                            backgroundColor: "#ccc",
-                            width: "120px",
-                            height: "120px",
-                            borderRadius: "50%",
-                            margin: "0 70px 0 80px"
-                        }}>
-
-                        </div>
+                        <label htmlFor="icon_image">
+                            <div style={{
+                                backgroundColor: "#ccc",
+                                width: "120px",
+                                height: "120px",
+                                borderRadius: "50%",
+                                margin: "0 70px 0 80px"
+                            }}>
+                            </div>
+                        </label>
+                        <input type="file" onChange={IconImageChange} multiple accept="image/*" id="icon_image" style={{display: "none"}} />
                         <div>
                             <div style={{
                                 margin: "0 0 6px 0"
