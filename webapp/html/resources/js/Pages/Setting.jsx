@@ -18,6 +18,12 @@ function Setting(props) {
         margin: 20px 0 20px 55px;
     `
 
+    const TitleDiv = styled.div`
+        margin: 20px 0 40px 55px;
+        font-size: 1.6rem;
+        font-weight: 600;
+    `
+
     // ログインユーザID
     const userId = props.auth.user.id
 
@@ -28,6 +34,9 @@ function Setting(props) {
                 userId={userId}
             />
             <Common>
+                <TitleDiv>
+                    アカウント設定
+                </TitleDiv>
                 <CommonDiv>
                     <Link href={route('logout')}>
                         ログアウト

@@ -107,9 +107,6 @@ export default function LikeList(props) {
                     ) }
                 </CommonDiv>
             </Common>
-            <Post
-                userId={userId}
-            />
         </div>
     );
 }

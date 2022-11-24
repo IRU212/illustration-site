@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Follow\CountController;
 use App\Http\Controllers\FollowController;
 use App\Http\Controllers\Like\LisController;
 use App\Http\Controllers\Post\LikeController;
@@ -46,8 +47,10 @@ Route::get('post/like/destory',[LikeController::class,'destory'])->name('post.li
 Route::post('post/like/destory',[LikeController::class,'destory'])->name('post.like.destory');
 
 // profile
-
 Route::get('profile/{id}/index',[UserController::class,'index'])->name('profile.index');
+
+Route::get('profile/{id}/update',[UserController::class,'update'])->name('profile.update');
+Route::post('profile/{id}/update',[UserController::class,'update'])->name('profile.update');
 
 // いいね一覧
 
@@ -65,3 +68,6 @@ Route::post('follow/store',[FollowController::class,'store'])->name('follow.stor
 
 Route::get('follow/destory',[FollowController::class,'destory'])->name('follow.destory');
 Route::post('follow/destory',[FollowController::class,'destory'])->name('follow.destory');
+
+// フォロー・フォロワーカウント
+Route::get('count/{userId}/index',[CountController::class,'index'])->name('follow.count.index');

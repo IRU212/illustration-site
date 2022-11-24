@@ -55,6 +55,10 @@ Route::get('setting', function () {
     return Inertia::render('Setting');
 })->middleware(['auth', 'verified'])->name('profile');
 
+// プロフィール設定
+Route::get('setting/profile', function () {
+    return Inertia::render('ProfileSetting');
+})->middleware(['auth', 'verified'])->name('profile');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

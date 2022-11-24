@@ -4,6 +4,8 @@ import SideHeader from '@/Header/SideHeader'
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
+import SettingsIcon from '@mui/icons-material/Settings';
+import Count from './Profile/Count'
 
 function Profile(props) {
 
@@ -64,6 +66,15 @@ function Profile(props) {
         font-weight: 600;
     `
 
+    const CountDiv = styled.div`
+        position: absolute;
+        top: 50%;
+        left: 25vw;
+        transform: translateY(-50%);
+        font-size: 1.1rem;
+        font-weight: 600;
+    `
+
     // プロフィールデータ
     const [data,setData] = useState()
 
@@ -105,11 +116,22 @@ function Profile(props) {
                         { data?.name }
                     </NameDiv>
                     <FollowDiv>
-                        <IsFollow
-                            userId={userId}
+                        { userId == profileId ?
+                            <a href="http://localhost/setting/profile">
+                                <SettingsIcon />
+                            </a>
+                            :
+                            <IsFollow
+                                userId={userId}
+                                profileId={profileId}
+                            />
+                        }
+                    </FollowDiv>
+                    <CountDiv>
+                        <Count
                             profileId={profileId}
                         />
-                    </FollowDiv>
+                    </CountDiv>
                 </ProfileDiv>
             </Common>
         </div>

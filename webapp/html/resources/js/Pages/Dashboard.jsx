@@ -84,9 +84,11 @@ export default function Dashboard(props) {
                 <CommonDiv>
                     { data?.map((item,index) =>
                         <CommonItem key={index}>
-                            <Icon>
-                                <img src="https://webstatic.hoyoverse.com/upload/uploadstatic/contentweb/20210419/2021041914484954170.png" alt="" />
-                            </Icon>
+                            <a href={`http://localhost/profile/${item.user.id}`}>
+                                <Icon>
+                                    <img src="https://webstatic.hoyoverse.com/upload/uploadstatic/contentweb/20210419/2021041914484954170.png" alt="" />
+                                </Icon>
+                            </a>
                             <div>
                                 <CommonName>
                                     { item.user.name }

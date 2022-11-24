@@ -15,7 +15,7 @@ function IsFollow(props) {
 
     useLayoutEffect(() => {
         axios
-            .get(`http://localhost/api/follow/20/20/index`)
+            .get(`http://localhost/api/follow/${userId}/${profileId}/index`)
             .then((res) => {
                 setData(res.data)
             })
@@ -24,6 +24,7 @@ function IsFollow(props) {
             })
     })
 
+    console.log(data)
 
     return (
         <div>
