@@ -50,7 +50,7 @@ function Post(props) {
         data.append("user_id",userId)
 
         axios
-            .post("http://localhost/api/post/store",data)
+            .post("https://illustration-site.herokuapp.com/api/post/store",data)
             .then(() => {
                 location.reload()
             })

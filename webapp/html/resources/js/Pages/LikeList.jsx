@@ -66,7 +66,7 @@ export default function LikeList(props) {
 
     useEffect(() => {
         axios
-            .get(`http://localhost/api/like/list/${userId}/index`)
+            .get(`https://illustration-site.herokuapp.com/api/like/list/${userId}/index`)
             .then((res) => {
                 setUser(res.data?.user)
                 setData(res.data)

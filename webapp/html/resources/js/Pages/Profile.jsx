@@ -89,7 +89,7 @@ function Profile(props) {
 
     useEffect(() => {
         axios
-            .get(`http://localhost/api/profile/${profileId}/index`)
+            .get(`https://illustration-site.herokuapp.com/api/profile/${profileId}/index`)
             .then((res) => {
                 setData(res.data)
             })
