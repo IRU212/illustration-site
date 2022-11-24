@@ -149,7 +149,7 @@ function Profile(props) {
                                 />
                             </div>
                             :
-                            <img src={`data:image/png;base64,${userBack}`} alt="aaaa" style={{
+                            <img src={`data:image/png;base64,${userIcon}`} alt="aaaa" style={{
                                 width: "100%",
                                 height: "100%",
                                 borderRadius: "50%"

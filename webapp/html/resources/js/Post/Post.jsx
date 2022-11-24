@@ -1,32 +1,23 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import AddCircleIcon from '@mui/icons-material/AddCircle';
 
 function Post(props) {
 
-    const Post = styled.div`
-        position: fixed;
-        bottom: 7vh;
-        right: 7vw;
+    const PostButton = styled.div`
+        cursor: pointer;
     `
 
-    const ModalMainDiv = styled.div`
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
+    const PostSaveButton = styled.div`
+        cursor: pointer;
+        padding: 6px 16px;
+        margin: 40px 0 8px 0;
+        border-radius: 6px;
+        color: #fff;
         background-color: #000;
-        opacity: 0.6;
-    `
-
-    const ModalSubDiv = styled.div`
-        width: 600px;
-        position: absolute;
-        background-color: #fff;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
+        font-size: 0.8rem;
+        width: fit-content;
     `
 
     const [message,setMessage] = useState()
@@ -50,7 +41,7 @@ function Post(props) {
         data.append("user_id",userId)
 
         axios
-            .post("https://illustration-site.herokuapp.com/api/post/store",data)
+            .post("api/post/store",data)
             .then(() => {
                 location.reload()
             })
@@ -84,8 +75,7 @@ function Post(props) {
                         left: "0",
                         width: "100%",
                         height: "100vh",
-                        backgroundColor: "#000",
-                        opacity: "0.6",
+                        background:"rgba(0,0,0,0.5)",
                     }}
                     onClick={
                         (e) => modalDisplayClick(e)
@@ -97,24 +87,34 @@ function Post(props) {
                         top: "50%",
                         left: "50%",
                         transform: "translate(-50%,-50%)",
+                        opacity: "1",
+                        padding: "30px 50px",
+                        zIndex: "999",
+                        borderRadius: "10px"
                     }}>
                         <div>
-                            <div>message</div>
+                            <div style={{
+                                margin: "10px 0 20px 0"
+                             }}>
+                                message
+                            </div>
                             <div>
                                 <input type="text" value={message} onChange={MessageChnage} />
                             </div>
                         </div>
-                        <div onClick={PostClick}>
+                        <PostSaveButton onClick={PostClick}>
                             投稿
-                        </div>
+                        </PostSaveButton>
                     </div>
                 </div>
                 :
                 ""
             }
-            <div onClick={ModalClick}>
-                ＋
-            </div>
+            <PostButton onClick={ModalClick}>
+                <AddCircleIcon
+                    style={{ fontSize: "3.2rem" }}
+                />
+            </PostButton>
         </div>
     )
 }
