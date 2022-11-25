@@ -82,3 +82,7 @@ Route::get('notification/{id}/index',[NotificationController::class,'index'])->n
 
 Route::get('notification/store',[NotificationController::class,'store'])->name('notification.store');
 Route::post('notification/store',[NotificationController::class,'store'])->name('notification.store');
+
+// ブロック機能
+Route::get('notification/store',[NotificationController::class,'store'])->name('notification.store');
+Route::post('notification/store',[NotificationController::class,'store'])->name('notification.store');

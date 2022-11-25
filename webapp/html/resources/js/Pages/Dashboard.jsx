@@ -8,6 +8,7 @@ import Post from '@/Post/Post';
 import axios from 'axios';
 import IsLike from '@/Content/IsLike';
 import PersonIcon from '@mui/icons-material/Person';
+import More from '@/Content/More';
 
 export default function Dashboard(props) {
 
@@ -29,6 +30,18 @@ export default function Dashboard(props) {
         border-bottom: 1px solid #ccc;
         padding: 19px 38px;
         display: flex;
+    `
+
+    const MoreItem = styled.div`
+        position: absolute;
+        right: 26px;
+        top: -2px;
+        letter-spacing: 1.6px;
+        font-size: 1.6rem;
+
+        &:hover{
+            cursor: pointer;
+        }
     `
 
     const Icon = styled.div`
@@ -54,7 +67,7 @@ export default function Dashboard(props) {
     const Like = styled.div`
         position: absolute;
         right: 26px;
-        top: 18px;
+        bottom: 12px;
 
         &:hover{
             cursor: pointer;
@@ -128,6 +141,11 @@ export default function Dashboard(props) {
                                     postUserId={item.user_id}
                                 />
                             </Like>
+                            <MoreItem>
+                                <More
+                                    ItemIndex={index}
+                                />
+                            </MoreItem>
                         </CommonItem>
                     ) }
                 </CommonDiv>
