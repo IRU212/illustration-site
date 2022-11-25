@@ -29,11 +29,25 @@ function Follow(props) {
         axios
             .post("http://localhost/api/follow/store",data)
             .then(() => {
+                // location.reload()
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+
+        data.append("destination",profileId)
+        data.append("notification_type_id",1)
+
+        // フォローメッセージ送信
+        axios
+            .post("http://localhost/api/notification/store",data)
+            .then(() => {
                 location.reload()
             })
             .catch((err) => {
                 console.log(err)
             })
+
     }
 
     return (

@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import PersonIcon from '@mui/icons-material/Person';
+import NotificationsIcon from '@mui/icons-material/Notifications';
 
 function Header(props) {
 
@@ -50,6 +51,13 @@ function Header(props) {
                     Home
                 </a>
             </Home>
+            <NotificationsIcon style={{
+                position: "absolute",
+                top: "50%",
+                right: "12vw",
+                fontSize: "35px",
+                transform: "translateY(-50%)"
+            }} />
             <a href={`http://localhost/profile/${userInfo.id}`}>
                 <Icon>
                     { userInfo.icon_path == null ?

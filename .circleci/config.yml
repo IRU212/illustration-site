@@ -8,6 +8,7 @@ jobs:
       - checkout
       - run: sudo composer self-update 
       - run: composer install -n --prefer-dist --working-dir=./webapp/html
+      - run: composer update
       # - run: npm ci --working-dir=./laravel-project
       # - run: npm run dev --working-dir=./laravel-project
       - run:

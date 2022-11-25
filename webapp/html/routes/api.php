@@ -3,6 +3,7 @@
 use App\Http\Controllers\Follow\CountController;
 use App\Http\Controllers\FollowController;
 use App\Http\Controllers\Like\LisController;
+use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\Post\LikeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
@@ -75,3 +76,9 @@ Route::get('count/{userId}/index',[CountController::class,'index'])->name('follo
 // アカウント削除機能
 Route::get('user/delete',[UserController::class,'delete'])->name('user.delete');
 Route::post('user/delete',[UserController::class,'delete'])->name('user.delete');
+
+// 通知機能
+Route::get('notification/{id}/index',[NotificationController::class,'index'])->name('notification.index');
+
+Route::get('notification/store',[NotificationController::class,'store'])->name('notification.store');
+Route::post('notification/store',[NotificationController::class,'store'])->name('notification.store');
