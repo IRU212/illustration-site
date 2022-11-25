@@ -144,6 +144,8 @@ export default function Dashboard(props) {
                             <MoreItem>
                                 <More
                                     ItemIndex={index}
+                                    userInfo={props.auth.user}
+                                    postInfo={item}
                                 />
                             </MoreItem>
                         </CommonItem>

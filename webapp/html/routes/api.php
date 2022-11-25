@@ -84,5 +84,5 @@ Route::get('notification/store',[NotificationController::class,'store'])->name('
 Route::post('notification/store',[NotificationController::class,'store'])->name('notification.store');
 
 // ブロック機能
-Route::get('notification/store',[NotificationController::class,'store'])->name('notification.store');
-Route::post('notification/store',[NotificationController::class,'store'])->name('notification.store');
+Route::get('user/block/store',[\App\Http\Controllers\Block\UserController::class,'store'])->name('user.block.store');
+Route::post('user/block/store',[\App\Http\Controllers\Block\UserController::class,'store'])->name('user.block.store');

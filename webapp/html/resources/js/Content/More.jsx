@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import BlockUser from './BlockUser'
 
 function More(props) {
 
@@ -18,6 +19,14 @@ function More(props) {
         z-index: 999;
         position: absolute;
         right: 70px;
+        box-shadow: 0 0 8px gray;
+        font-size: 0.8rem;
+        font-weight: 600;
+        border-radius: 16px;
+
+        div{
+            margin: 10px 20px;
+        }
     `
 
     // moreModalの何個目
@@ -49,9 +58,10 @@ function More(props) {
                         <ModalSubDiv style={{
                             top: ItemIndexTopPosition,
                         }}>
-                            <div>
-                                aaaaa
-                            </div>
+                            <BlockUser
+                                userInfo={props.userInfo}
+                                postInfo={props.postInfo}
+                            />
                         </ModalSubDiv>
                     </ModalDiv>
                     :

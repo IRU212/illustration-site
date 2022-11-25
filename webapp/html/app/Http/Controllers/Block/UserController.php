@@ -14,6 +14,7 @@ class UserController extends Controller
         $block = new Block();
 
         $block->user_id = $request->user_id;
+        $block->block_user_id = $request->block_user_id;
 
         $block->save();
     }
