@@ -66,4 +66,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+// 通知ページ
+Route::get('notification', function () {
+    return Inertia::render('Notification');
+})->middleware(['auth', 'verified'])->name('profile');
+
 require __DIR__.'/auth.php';

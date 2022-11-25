@@ -10,6 +10,9 @@ function Like(props) {
     // 投稿Id
     const postId = props.postId
 
+    // 送信先ユーザID
+    const postUserId = props.postUserId
+
     const LikeClick = () => {
 
         const data = new FormData()
@@ -20,9 +23,22 @@ function Like(props) {
         axios
             .post(`http://localhost/api/post/like/store`,data)
             .then(() => {
-                location.reload()
+                // location.reload()
             })
             .catch((err) =>  {
+                console.log(err)
+            })
+
+        data.append("destination",postUserId) // 送信先ユーザID
+        data.append("notification_type_id",1) // いいねタイプ
+
+        // フォローメッセージ送信
+        axios
+            .post("http://localhost/api/notification/store",data)
+            .then(() => {
+                location.reload()
+            })
+            .catch((err) => {
                 console.log(err)
             })
     }

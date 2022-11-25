@@ -28,7 +28,7 @@ class NotificationController extends Controller
 
         $notification->user_id = $request->user_id; // 送信元ユーザID
         $notification->destination = $request->destination; // 送信先ユーザID
-        $notification->message = $message_data[0]; // 通知メッセージ
+        $notification->message = $message_data[$request->notification_type_id]; // 通知メッセージ
         $notification->notification_type_id = $request->notification_type_id; // メッセージタイプ
 
         $notification->save();

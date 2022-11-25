@@ -35,6 +35,7 @@ function IsLike(props) {
                 <Like
                     userId={userId}
                     postId={postId}
+                    postUserId={props.postUserId}
                 />
             }
         </div>

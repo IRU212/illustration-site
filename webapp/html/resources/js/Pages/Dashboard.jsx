@@ -72,6 +72,7 @@ export default function Dashboard(props) {
             // .get("https://illustration-site.herokuapp.com/api/post/index")
             .then((res) => {
                 setData(res.data)
+                console.log(res.data)
             })
             .catch((err) => {
                 console.log(err)
@@ -124,6 +125,7 @@ export default function Dashboard(props) {
                                 <IsLike
                                     userId={userId}
                                     postId={item.id}
+                                    postUserId={item.user_id}
                                 />
                             </Like>
                         </CommonItem>

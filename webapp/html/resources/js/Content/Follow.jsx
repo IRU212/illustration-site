@@ -35,8 +35,8 @@ function Follow(props) {
                 console.log(err)
             })
 
-        data.append("destination",profileId)
-        data.append("notification_type_id",1)
+        data.append("destination",profileId) // 送信先ユーザID
+        data.append("notification_type_id",0) //フォロータイプ
 
         // フォローメッセージ送信
         axios

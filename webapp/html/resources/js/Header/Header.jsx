@@ -51,13 +51,16 @@ function Header(props) {
                     Home
                 </a>
             </Home>
-            <NotificationsIcon style={{
-                position: "absolute",
-                top: "50%",
-                right: "12vw",
-                fontSize: "35px",
-                transform: "translateY(-50%)"
-            }} />
+            <a href={`http://localhost/notification`}>
+                <NotificationsIcon style={{
+                    position: "absolute",
+                    top: "50%",
+                    right: "12vw",
+                    fontSize: "35px",
+                    transform: "translateY(-50%)",
+                    cursor: "pointer"
+                }} />
+            </a>
             <a href={`http://localhost/profile/${userInfo.id}`}>
                 <Icon>
                     { userInfo.icon_path == null ?
