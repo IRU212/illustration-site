@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Post\Like;
+use App\Models\User\Block;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -23,11 +24,16 @@ class Post extends Model
 
     public function users()
     {
-        return $this->belongsToMany(User::class,'like_post','user_id','post_id');
+        return $this->belongsToMany(User::class,'like_post','user_id','post_id')->withPivotValue();
     }
 
     public function likes()
     {
         return $this->hasMany(Like::class);
+    }
+
+    public function blocks()
+    {
+        return $this->hasMany(Block::class);
     }
 }

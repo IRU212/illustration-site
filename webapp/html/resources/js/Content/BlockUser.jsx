@@ -24,7 +24,7 @@ function BlockUser(props) {
 
     return (
         <div onClick={BlockClick}>
-            ユーザブロック
+            Block User
         </div>
     )
 }

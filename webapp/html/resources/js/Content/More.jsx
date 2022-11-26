@@ -58,10 +58,16 @@ function More(props) {
                         <ModalSubDiv style={{
                             top: ItemIndexTopPosition,
                         }}>
-                            <BlockUser
-                                userInfo={props.userInfo}
-                                postInfo={props.postInfo}
-                            />
+                            { props.userInfo.id == props.postInfo.user_id ?
+                                <div>
+                                    Delete
+                                </div>
+                                :
+                                <BlockUser
+                                    userInfo={props.userInfo}
+                                    postInfo={props.postInfo}
+                                />
+                            }
                         </ModalSubDiv>
                     </ModalDiv>
                     :
