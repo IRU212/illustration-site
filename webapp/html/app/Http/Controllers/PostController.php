@@ -45,6 +45,13 @@ class PostController extends Controller
             }
         }
 
+        // id の降順に並び替える
+        // 並び替えの基準を取得
+        $ids = array_column($data,'created_at');
+
+        // 降順（SORT_DESC）に並び替える
+        array_multisort($ids,SORT_DESC,$data);
+
         return response()->json($data);
 
         // dump($all_user_id[0]);
