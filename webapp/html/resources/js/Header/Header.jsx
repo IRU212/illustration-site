@@ -47,7 +47,7 @@ function Header(props) {
     return (
         <Header>
             <Home>
-                <a href="https://illustration-site.herokuapp.com/dashboard">
+                <a href="https://illustration-site.herokuapp.com/home">
                     Home
                 </a>
             </Home>

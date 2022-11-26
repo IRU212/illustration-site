@@ -1,0 +1,35 @@
+$back-image-array: "https://www.sozai-library.com/wp-content/uploads/2014/09/2884.jpg",
+                   "http://10grove.moo.jp/blog/wp-content/uploads/2015/07/yozora19201080.jpg";
+
+$back_array_index: random(2);
+
+.Login{
+    width: 100vw;
+    height: 100vh;
+    background-image: url(nth($back-image-array,$back_array_index));
+
+    form{
+        background-color: #fff;
+        width: fit-content;
+        padding: 40px 50px;
+        border-radius: 15px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        position: relative;
+
+        .Input{
+            width: 300px;
+        }
+
+        .Title{
+            margin: 10px 0 8px 0;
+        }
+
+        .Button{
+            position: absolute;
+            right: 50px;
+        }
+    }
+}

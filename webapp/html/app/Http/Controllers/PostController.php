@@ -32,14 +32,16 @@ class PostController extends Controller
         // valueのみ取得
         $result_user_id_value = array_values($result_user_id);
 
+        // 空配列を準備
         $data = [];
 
         foreach ($result_user_id_value as $index => $item) {
             $datas = $post->with('user')
                           ->where('user_id',$item)
                           ->orderBy('created_at','desc')
-                          ->get(['message','id']);
+                          ->get();
 
+            // 配列を一次元に並び替え
             foreach ($datas as $index => $value) {
                 $data[] = $value;
             }

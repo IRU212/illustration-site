@@ -39,7 +39,7 @@ function SideHeader(props) {
                 <div
                     style={{fontSize: "1.5rem",fontWeight:600,margin:"2px 0 0 10px"}}
                 >
-                    <a href="http://localhost/dashboard">
+                    <a href="http://localhost/home">
                         HOME
                     </a>
                 </div>
