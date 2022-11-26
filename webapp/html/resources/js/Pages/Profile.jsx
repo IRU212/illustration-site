@@ -1,4 +1,5 @@
 import IsFollow from '@/Content/IsFollow'
+import ProfileMore from '@/Content/ProfileMore'
 import Header from '@/Header/Header'
 import SideHeader from '@/Header/SideHeader'
 import axios from 'axios'
@@ -73,6 +74,22 @@ function Profile(props) {
         transform: translateY(-50%);
         font-size: 1.1rem;
         font-weight: 600;
+    `
+
+    const MoreStyle = styled.div`
+        position: absolute;
+        top: 50%;
+        right: 7vw;
+        transform: translateY(-50%);
+        font-size: 1.3rem;
+        font-weight: 600;
+        display: flex;
+        letter-spacing: 0rem;
+        paddding: 16px;
+
+        &:hover{
+            cursor: pointer;
+        }
     `
 
     // プロフィールデータ
@@ -173,6 +190,9 @@ function Profile(props) {
                             />
                         }
                     </FollowDiv>
+                    <MoreStyle>
+                        <ProfileMore />
+                    </MoreStyle>
                     <CountDiv>
                         <Count
                             profileId={profileId}
