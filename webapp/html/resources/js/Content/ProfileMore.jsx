@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-function ProfileMore() {
+function ProfileMore(props) {
 
     const ModalDiv = styled.div`
         position: fixed;
@@ -31,7 +31,30 @@ function ProfileMore() {
         }
     `
 
+    // ログインユーザID
+    const userId = props.userId
+
+    // プロフィールID
+    const profileId = props.profileId
+
     const [moreDisplay,setMoreDisplay] = useState(false)
+
+    const  BlockClick = () => {
+
+        const data = new FormData
+
+        data.append("block_user_id",profileId)
+        data.append("user_id",userId)
+
+        axios
+            .post('http://localhost/api/user/block/store',data)
+            .then(() => {
+                location.reload()
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    }
 
     const DisplayClick = () => {
         setMoreDisplay(!moreDisplay)
@@ -56,8 +79,8 @@ function ProfileMore() {
                         ModalDisplayClick(e)
                     }}>
                         <ModalSubDiv>
-                            <div>
-                                aaaa
+                            <div onClick={BlockClick}>
+                                User Block
                             </div>
                         </ModalSubDiv>
                     </ModalDiv>

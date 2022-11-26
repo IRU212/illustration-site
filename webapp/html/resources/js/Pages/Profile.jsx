@@ -191,7 +191,14 @@ function Profile(props) {
                         }
                     </FollowDiv>
                     <MoreStyle>
-                        <ProfileMore />
+                        { userId == profileId ?
+                            ""
+                            :
+                            <ProfileMore
+                                userId={userId}
+                                profileId={profileId}
+                            />
+                        }
                     </MoreStyle>
                     <CountDiv>
                         <Count
