@@ -71,4 +71,11 @@ class PostController extends Controller
         // 保存する
         $post->save();
     }
+
+    public function destory(Request $request){
+        // model呼び出し
+        $post = new Post();
+
+        $post->where('id',$request->post_id)->delete();
+    }
 }

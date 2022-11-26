@@ -34,6 +34,9 @@ Route::get('post/{id}/index',[PostController::class,'index'])->name('post.index'
 Route::get('post/store',[PostController::class,'store'])->name('post.store');
 Route::post('post/store',[PostController::class,'store'])->name('post.store');
 
+Route::get('post/destory',[PostController::class,'destory'])->name('post.destory');
+Route::post('post/destory',[PostController::class,'destory'])->name('post.destory');
+
 // post いいね機能
 Route::get('post/like/{userId}/{postId}/index',[LikeController::class,'index'])->name('post.like.index');
 

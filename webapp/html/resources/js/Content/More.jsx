@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import BlockUser from './BlockUser'
+import PostDelete from './PostDelete'
 
 function More(props) {
 
@@ -59,9 +60,10 @@ function More(props) {
                             top: ItemIndexTopPosition,
                         }}>
                             { props.userInfo.id == props.postInfo.user_id ?
-                                <div>
-                                    Delete
-                                </div>
+                                <PostDelete
+                                    userInfo={props.userInfo}
+                                    postInfo={props.postInfo}
+                                />
                                 :
                                 <BlockUser
                                     userInfo={props.userInfo}
