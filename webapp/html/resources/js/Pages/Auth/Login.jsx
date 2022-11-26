@@ -74,6 +74,12 @@ export default function Login({ status, canResetPassword }) {
                     </label>
                 </div>
 
+                <div className='text-sm '>
+                    <a href="./register">
+                        register acount
+                    </a>
+                </div>
+
                 <div>
                     {canResetPassword && (
                         <Link
