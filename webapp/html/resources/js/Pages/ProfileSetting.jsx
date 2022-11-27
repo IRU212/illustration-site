@@ -83,7 +83,7 @@ function ProfileSetting(props) {
         data.append("icon_path",iconImage)
 
         axios
-            .post(`http://localhost/api/profile/${userId}/update`,data)
+            .post(`https://illustration-site.herokuapp.com/api/profile/${userId}/update`,data)
             .then(() => {
                 location.reload()
             })

@@ -39,7 +39,7 @@ function SideHeader(props) {
                 <div
                     style={{fontSize: "1.5rem",fontWeight:600,margin:"2px 0 0 10px"}}
                 >
-                    <a href="http://localhost/home">
+                    <a href="https://illustration-site.herokuapp.com/home">
                         HOME
                     </a>
                 </div>
@@ -53,7 +53,7 @@ function SideHeader(props) {
                 <div
                     style={{fontSize: "1.5rem",fontWeight:600,margin:"2px 0 0 10px"}}
                 >
-                    <a href={`http://localhost/profile/${userId}`}>
+                    <a href={`https://illustration-site.herokuapp.com/profile/${userId}`}>
                         PROFILE
                     </a>
                 </div>
@@ -67,7 +67,7 @@ function SideHeader(props) {
                 <div
                     style={{fontSize: "1.5rem",fontWeight:600,margin:"2px 0 0 10px"}}
                 >
-                    <a href={`http://localhost/search`}>
+                    <a href={`https://illustration-site.herokuapp.com/search`}>
                         SEARCH
                     </a>
                 </div>
@@ -81,7 +81,7 @@ function SideHeader(props) {
                 <div
                     style={{fontSize: "1.5rem",fontWeight:600,margin:"2px 0 0 10px"}}
                 >
-                    <a href={`http://localhost/like/list/${userId}`}>
+                    <a href={`https://illustration-site.herokuapp.com/like/list/${userId}`}>
                         LIKE LIST
                     </a>
                 </div>
@@ -95,7 +95,7 @@ function SideHeader(props) {
                 <div
                     style={{fontSize: "1.5rem",fontWeight:600,margin:"2px 0 0 10px"}}
                 >
-                    <a href={`http://localhost/setting`}>
+                    <a href={`https://illustration-site.herokuapp.com/setting`}>
                         SETTING
                     </a>
                 </div>

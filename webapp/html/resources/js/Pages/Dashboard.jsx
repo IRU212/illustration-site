@@ -104,7 +104,7 @@ export default function Dashboard(props) {
                 <CommonDiv>
                     { data?.map((item,index) =>
                         <CommonItem key={index}>
-                            <a href={`http://localhost/profile/${item.user.id}`}>
+                            <a href={`https://illustration-site.herokuapp.com/profile/${item.user.id}`}>
                                 <Icon>
                                     { item.user.icon_path == null ?
                                         <PersonIcon

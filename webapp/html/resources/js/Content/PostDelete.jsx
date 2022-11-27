@@ -12,7 +12,7 @@ function PostDelete(props) {
         data.append("post_id",postInfo.id)
 
         axios
-            .post("http://localhost/api/post/destory",data)
+            .post("https://illustration-site.herokuapp.com/api/post/destory",data)
             .then(() => {
                 location.reload()
             })

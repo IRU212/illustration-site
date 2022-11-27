@@ -21,7 +21,7 @@ function Like(props) {
         data.append("post_id",postId)
 
         axios
-            .post(`http://localhost/api/post/like/store`,data)
+            .post(`https://illustration-site.herokuapp.com/api/post/like/store`,data)
             .then(() => {
                 // location.reload()
             })
@@ -34,7 +34,7 @@ function Like(props) {
 
         // フォローメッセージ送信
         axios
-            .post("http://localhost/api/notification/store",data)
+            .post("hhttps://illustration-site.herokuapp.com/api/notification/store",data)
             .then(() => {
                 location.reload()
             })

@@ -27,7 +27,7 @@ function Follow(props) {
         data.append("following",profileId)
 
         axios
-            .post("http://localhost/api/follow/store",data)
+            .post("https://illustration-site.herokuapp.com/api/follow/store",data)
             .then(() => {
                 // location.reload()
             })
@@ -40,7 +40,7 @@ function Follow(props) {
 
         // フォローメッセージ送信
         axios
-            .post("http://localhost/api/notification/store",data)
+            .post("https://illustration-site.herokuapp.com/api/notification/store",data)
             .then(() => {
                 location.reload()
             })

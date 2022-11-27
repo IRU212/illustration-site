@@ -13,7 +13,7 @@ function BlockUser(props) {
         data.append("user_id",userInfo.id)
 
         axios
-            .post('http://localhost/api/user/block/store',data)
+            .post('https://illustration-site.herokuapp.com/api/user/block/store',data)
             .then(() => {
                 location.reload()
             })

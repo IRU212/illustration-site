@@ -67,7 +67,7 @@ function Item(props) {
 
     useEffect(() => {
         axios
-            .get(`http://localhost/api/profile/post/${profileId}/index`)
+            .get(`https://illustration-site.herokuapp.com/api/profile/post/${profileId}/index`)
             .then((res) => {
                 setData(res.data)
             })
@@ -83,7 +83,7 @@ function Item(props) {
         }}>
             { data?.map((item,index) =>
                 <CommonItem key={index}>
-                    <a href={`http://localhost/profile/${item.user.id}`}>
+                    <a href={`https://illustration-site.herokuapp.com/profile/${item.user.id}`}>
                         <Icon>
                             { item.user.icon_path == null ?
                                 <PersonIcon

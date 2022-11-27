@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import axios from 'axios';
 import IsLike from '@/Content/IsLike';
 import SearchIcon from '@mui/icons-material/Search';
+import PersonIcon from '@mui/icons-material/Person';
 
 function Search(props) {
 
@@ -26,6 +27,8 @@ function Search(props) {
         height 50px;
         border-radius: 50%;
         margin: 0 50px 0 0;
+        position: relative;
+        border: 1px solid #ccc;
 
         img{
             width: 100%;
@@ -153,9 +156,28 @@ function Search(props) {
                                 <div>
                                     { data?.map((item,index) =>
                                         <CommonItem key={index}>
-                                            <Icon>
-                                                <img src="https://webstatic.hoyoverse.com/upload/uploadstatic/contentweb/20210419/2021041914484954170.png" alt="" />
-                                            </Icon>
+                                            <a href={`https://illustration-site.herokuapp.com/profile/${item.user.id}`}>
+                                                <Icon>
+                                                    { item.user.icon_path == null ?
+                                                        <PersonIcon
+                                                            style={{
+                                                                color: "#ccc",
+                                                                position: "absolute",
+                                                                top: "50%",
+                                                                left: "50%",
+                                                                transform: "translate(-50%,-50%)",
+                                                                fontSize: "34px",
+                                                        }}
+                                                    />
+                                                        :
+                                                        <img src={`data:image/png;base64,${item.user.icon_path}`} alt="" style={{
+                                                            width: "100%",
+                                                            height: "100%",
+                                                            borderRadius: "50%",
+                                                        }} />
+                                                    }
+                                                </Icon>
+                                            </a>
                                             <div>
                                                 <CommonName>
                                                     { item.user.name }

@@ -47,7 +47,7 @@ function ProfileMore(props) {
         data.append("user_id",userId)
 
         axios
-            .post('http://localhost/api/user/block/store',data)
+            .post('https://illustration-site.herokuapp.com/api/user/block/store',data)
             .then(() => {
                 location.reload()
             })

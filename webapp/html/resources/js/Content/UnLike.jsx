@@ -18,7 +18,7 @@ function UnLike(props) {
         data.append("post_id",postId)
 
         axios
-            .post(`http://localhost/api/post/like/destory`,data)
+            .post(`https://illustration-site.herokuapp.com/api/post/like/destory`,data)
             .then(() => {
                 location.reload()
             })

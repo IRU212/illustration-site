@@ -51,7 +51,7 @@ function Header(props) {
                     Home
                 </a>
             </Home>
-            <a href={`http://localhost/notification`}>
+            <a href={`https://illustration-site.herokuapp.com/notification`}>
                 <NotificationsIcon style={{
                     position: "absolute",
                     top: "50%",
@@ -61,7 +61,7 @@ function Header(props) {
                     cursor: "pointer"
                 }} />
             </a>
-            <a href={`http://localhost/profile/${userInfo.id}`}>
+            <a href={`https://illustration-site.herokuapp.com/profile/${userInfo.id}`}>
                 <Icon>
                     { userInfo.icon_path == null ?
                         <PersonIcon

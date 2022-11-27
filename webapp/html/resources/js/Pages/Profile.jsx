@@ -181,7 +181,7 @@ function Profile(props) {
                     </NameDiv>
                     <FollowDiv>
                         { userId == profileId ?
-                            <a href="http://localhost/setting/profile">
+                            <a href="https://illustration-site.herokuapp.com/setting/profile">
                                 <SettingsIcon />
                             </a>
                             :

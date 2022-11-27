@@ -15,7 +15,7 @@ function IsFollow(props) {
 
     useLayoutEffect(() => {
         axios
-            .get(`http://localhost/api/follow/${userId}/${profileId}/index`)
+            .get(`https://illustration-site.herokuapp.com/api/follow/${userId}/${profileId}/index`)
             .then((res) => {
                 setData(res.data)
             })

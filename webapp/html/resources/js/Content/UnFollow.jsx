@@ -27,7 +27,7 @@ function UnFollow(props) {
         data.append("following",profileId)
 
         axios
-            .post("http://localhost/api/follow/destory",data)
+            .post("https://illustration-site.herokuapp.com/api/follow/destory",data)
             .then(() => {
                 location.reload()
             })

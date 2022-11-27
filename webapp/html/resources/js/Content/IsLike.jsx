@@ -15,7 +15,7 @@ function IsLike(props) {
 
     useEffect(() => {
         axios
-            .get(`http://localhost/api/post/like/${userId}/${postId}/index`)
+            .get(`https://illustration-site.herokuapp.com/api/post/like/${userId}/${postId}/index`)
             .then((res) => {
                 seData(res.data)
             })
