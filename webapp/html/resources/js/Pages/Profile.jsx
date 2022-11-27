@@ -8,6 +8,7 @@ import styled from 'styled-components'
 import SettingsIcon from '@mui/icons-material/Settings';
 import Count from './Profile/Count'
 import PersonIcon from '@mui/icons-material/Person';
+import Item from './Profile/Item'
 
 function Profile(props) {
 
@@ -206,6 +207,11 @@ function Profile(props) {
                         />
                     </CountDiv>
                 </ProfileDiv>
+                <Item
+                    userId={userId}
+                    profileId={profileId}
+                    userInfo={props.auth.user}
+                />
             </Common>
         </div>
     )

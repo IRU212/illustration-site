@@ -56,6 +56,9 @@ Route::get('profile/{id}/index',[UserController::class,'index'])->name('profile.
 Route::get('profile/{id}/update',[UserController::class,'update'])->name('profile.update');
 Route::post('profile/{id}/update',[UserController::class,'update'])->name('profile.update');
 
+Route::get('profile/post/{id}/index',[\App\Http\Controllers\Profile\PostController::class,'index'])->name('profile.post.index');
+
+
 // いいね一覧
 
 Route::get('/like/list/{userId}/index',[LisController::class,'index'])->name('like.list.index');
