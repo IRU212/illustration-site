@@ -19,7 +19,7 @@ class NotificationController extends Controller
     {
         $notification = new Notification();
 
-        $user_name = User::find($request->user_id)->value('name');
+        $user_name = User::where('id',$request->user_id)->pluck('name')->first();
 
         $message_data = [
             $user_name . "さんにフォローされました",
