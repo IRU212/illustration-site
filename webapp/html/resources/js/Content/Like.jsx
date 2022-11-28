@@ -23,7 +23,7 @@ function Like(props) {
         axios
             .post(`https://illustration-site.herokuapp.com/api/post/like/store`,data)
             .then(() => {
-                // location.reload()
+                location.reload()
             })
             .catch((err) =>  {
                 console.log(err)
