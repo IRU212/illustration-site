@@ -71,4 +71,9 @@ Route::get('notification', function () {
     return Inertia::render('Notification');
 })->middleware(['auth', 'verified'])->name('profile');
 
+// 通知ページ
+Route::get('data', function () {
+    return Inertia::render('Data');
+})->middleware(['auth', 'verified'])->name('data');
+
 require __DIR__.'/auth.php';
