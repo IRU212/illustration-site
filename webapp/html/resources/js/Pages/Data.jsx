@@ -12,6 +12,16 @@ function Data(props) {
         width: calc(100% - 240px);
     `
 
+    const Graph = styled.div`
+        width: 90%;
+        height: 75vh;
+        background-color: #ccc;
+        position: absolute;
+        top: -20%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    `
+
     // ログインユーザID
     const userId = props.auth.user.id
 
@@ -24,7 +34,9 @@ function Data(props) {
                 userId={userId}
             />
             <Common>
-                Data
+                <Graph>
+                    aaaa
+                </Graph>
             </Common>
         </div>
     )
