@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Python\TestpythonController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -77,3 +78,5 @@ Route::get('data', function () {
 })->middleware(['auth', 'verified'])->name('data');
 
 require __DIR__.'/auth.php';
+
+

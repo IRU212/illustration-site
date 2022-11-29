@@ -26,6 +26,7 @@ function Data(props) {
         width: 100%;
         position: relative;
 
+
         div:nth-child(1){
             width: 100%;
             position: absolute;
@@ -143,6 +144,21 @@ function Data(props) {
         }
     `
 
+    const GraphDataResult = styled.div`
+        width: 92%;
+        display: flex;
+        position: absolute;
+        top: -1.3vh;
+        left: 5vw;
+
+        div{
+            margin: 0 auto;
+            background-color: #ccc;
+            width: 5%;
+            height: 75.1vh;
+        }
+    `
+
     // ログインユーザID
     const userId = props.auth.user.id
 
@@ -188,6 +204,44 @@ function Data(props) {
                         <div></div>
                         <div></div>
                     </GraphData>
+                    <GraphDataResult>
+                        <div>
+
+                        </div>
+                        <div>
+
+                        </div>
+                        <div>
+
+                        </div>
+                        <div>
+
+                        </div>
+                        <div>
+
+                        </div>
+                        <div>
+
+                        </div>
+                        <div>
+
+                        </div>
+                        <div>
+
+                        </div>
+                        <div>
+
+                        </div>
+                        <div>
+
+                        </div>
+                        <div>
+
+                        </div>
+                        <div>
+    
+                        </div>
+                    </GraphDataResult>
                     <GraphMonth>
                         <div>
                             1月

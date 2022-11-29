@@ -7,6 +7,7 @@ use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\Post\LikeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Python\TestpythonController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
@@ -92,3 +93,4 @@ Route::post('notification/store',[NotificationController::class,'store'])->name(
 // ブロック機能
 Route::get('user/block/store',[\App\Http\Controllers\Block\UserController::class,'store'])->name('user.block.store');
 Route::post('user/block/store',[\App\Http\Controllers\Block\UserController::class,'store'])->name('user.block.store');
+
