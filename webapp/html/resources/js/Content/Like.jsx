@@ -33,14 +33,14 @@ function Like(props) {
         data.append("notification_type_id",1) // いいねタイプ
 
         // フォローメッセージ送信
-        axios
-            .post("hhttps://illustration-site.herokuapp.com/api/notification/store",data)
-            .then(() => {
-                location.reload()
-            })
-            .catch((err) => {
-                console.log(err)
-            })
+        // axios
+        //     .post("hhttps://illustration-site.herokuapp.com/api/notification/store",data)
+        //     .then(() => {
+        //         location.reload()
+        //     })
+        //     .catch((err) => {
+        //         console.log(err)
+        //     })
     }
 
     return (
