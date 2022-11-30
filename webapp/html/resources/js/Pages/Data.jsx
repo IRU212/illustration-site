@@ -1,6 +1,7 @@
 import Header from '@/Header/Header'
 import SideHeader from '@/Header/SideHeader'
-import React from 'react'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components';
 
 function Data(props) {
@@ -25,7 +26,7 @@ function Data(props) {
     const GraphData = styled.div`
         width: 100%;
         position: relative;
-
+        z-index: 998;
 
         div:nth-child(1){
             width: 100%;
@@ -159,8 +160,50 @@ function Data(props) {
         }
     `
 
+    const [data,setData] = useState()
+
     // ログインユーザID
     const userId = props.auth.user.id
+
+    useEffect(() => {
+        axios
+            .get(`http://localhost/api/data/24/index`)
+            .then((res) => {
+                setData(res.data)
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    },[])
+
+    function DataHeight(data){
+        return (75 - 6.2 * data)  + "vh"
+    }
+
+    // グラフの白色の高さ
+    const OneHeight = DataHeight(data?.row_data.one_data);
+
+    const TwoHeight = DataHeight(data?.row_data.two_data);
+
+    const ThreeHeight = DataHeight(data?.row_data.three_data);
+
+    const FourHeight = DataHeight(data?.row_data.four_data);
+
+    const FiveHeight = DataHeight(data?.row_data.five_data);
+
+    const SixHeight = DataHeight(data?.row_data.six_data);
+
+    const SevenHeight = DataHeight(data?.row_data.seven_data);
+
+    const EightHeight = DataHeight(data?.row_data.eight_data);
+
+    const NineHeight = DataHeight(data?.row_data.nine_data);
+
+    const TenHeight = DataHeight(data?.row_data.ten_data);
+
+    const TweleveHeight = DataHeight(data?.row_data.ereven_data);
+
+    const ThirteenHeight = DataHeight(data?.row_data.tweleve_data);
 
     return (
         <div>
@@ -174,25 +217,25 @@ function Data(props) {
                 <Graph>
                     <GraphNumber>
                         <div>
-                            1
+                            { data?.row.first_row }
                         </div>
                         <div>
-                            2
+                            { data?.row.secound_row }
                         </div>
                         <div>
-                            3
+                            { data?.row.third_row }
                         </div>
                         <div>
-                            4
+                            { data?.row.four_row }
                         </div>
                         <div>
-                            5
+                            { data?.row.five_row }
                         </div>
                         <div>
-                            6
+                            { data?.row.six_row }
                         </div>
                         <div>
-                            7
+                            0
                         </div>
                     </GraphNumber>
                     <GraphData>
@@ -206,40 +249,88 @@ function Data(props) {
                     </GraphData>
                     <GraphDataResult>
                         <div>
-
+                            <div style={{
+                                height: OneHeight,
+                                width: "100%",
+                                backgroundColor: "#fff",
+                            }} />
                         </div>
                         <div>
-
+                            <div style={{
+                                height: TwoHeight,
+                                width: "100%",
+                                backgroundColor: "#fff",
+                            }} />
                         </div>
                         <div>
-
+                            <div style={{
+                                height: ThreeHeight,
+                                width: "100%",
+                                backgroundColor: "#fff",
+                            }} />
                         </div>
                         <div>
-
+                            <div style={{
+                                height: FourHeight,
+                                width: "100%",
+                                backgroundColor: "#fff",
+                            }} />
                         </div>
                         <div>
-
+                            <div style={{
+                                height: FiveHeight,
+                                width: "100%",
+                                backgroundColor: "#fff",
+                            }} />
                         </div>
                         <div>
-
+                            <div style={{
+                                height: SixHeight,
+                                width: "100%",
+                                backgroundColor: "#fff",
+                            }} />
                         </div>
                         <div>
-
+                            <div style={{
+                                height: SevenHeight,
+                                width: "100%",
+                                backgroundColor: "#fff",
+                            }} />
                         </div>
                         <div>
-
+                            <div style={{
+                                height: EightHeight,
+                                width: "100%",
+                                backgroundColor: "#fff",
+                            }} />
                         </div>
                         <div>
-
+                            <div style={{
+                                height: NineHeight,
+                                width: "100%",
+                                backgroundColor: "#fff",
+                            }} />
                         </div>
                         <div>
-
+                            <div style={{
+                                height: TenHeight,
+                                width: "100%",
+                                backgroundColor: "#fff",
+                            }} />
                         </div>
                         <div>
-
+                            <div style={{
+                                height: TweleveHeight,
+                                width: "100%",
+                                backgroundColor: "#fff",
+                            }} />
                         </div>
                         <div>
-    
+                            <div style={{
+                                height: ThirteenHeight,
+                                width: "100%",
+                                backgroundColor: "#fff",
+                            }} />
                         </div>
                     </GraphDataResult>
                     <GraphMonth>

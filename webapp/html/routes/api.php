@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DataController;
 use App\Http\Controllers\Follow\CountController;
 use App\Http\Controllers\FollowController;
 use App\Http\Controllers\Like\LisController;
@@ -12,6 +13,7 @@ use App\Http\Controllers\SearchController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Symfony\Component\HttpKernel\DataCollector\DataCollector;
 
 /*
 |--------------------------------------------------------------------------
@@ -94,3 +96,6 @@ Route::post('notification/store',[NotificationController::class,'store'])->name(
 Route::get('user/block/store',[\App\Http\Controllers\Block\UserController::class,'store'])->name('user.block.store');
 Route::post('user/block/store',[\App\Http\Controllers\Block\UserController::class,'store'])->name('user.block.store');
 
+// データ機能
+Route::get('data/{id}/index',[DataController::class,'index'])->name('data.index');
+Route::post('data/{id}/index',[DataController::class,'index'])->name('data.index');
