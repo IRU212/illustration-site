@@ -167,7 +167,7 @@ function Data(props) {
 
     useEffect(() => {
         axios
-            .get(`http://localhost/api/data/${userId}/index`)
+            .get(`http://localhost/api/data/24/index`)
             .then((res) => {
                 setData(res.data)
             })
@@ -335,40 +335,40 @@ function Data(props) {
                     </GraphDataResult>
                     <GraphMonth>
                         <div>
-                            1月
+                            {data?.month.one_month}月
                         </div>
                         <div>
-                            2月
+                            {data?.month.two_month}月
                         </div>
                         <div>
-                            3月
+                            {data?.month.three_month}月
                         </div>
                         <div>
-                            4月
+                            {data?.month.four_month}月
                         </div>
                         <div>
-                            5月
+                            {data?.month.five_month}月
                         </div>
                         <div>
-                            6月
+                            {data?.month.six_month}月
                         </div>
                         <div>
-                            7月
+                            {data?.month.seven_month}月
                         </div>
                         <div>
-                            8月
+                            {data?.month.eight_month}月
                         </div>
                         <div>
-                            9月
+                            {data?.month.nine_month}月
                         </div>
                         <div>
-                            10月
+                            {data?.month.ten_month}月
                         </div>
                         <div>
-                            11月
+                            {data?.month.ereven_month}月
                         </div>
                         <div>
-                            12月
+                            {data?.month.tweleve_month}月
                         </div>
                     </GraphMonth>
                 </Graph>

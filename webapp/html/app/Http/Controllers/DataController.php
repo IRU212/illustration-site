@@ -140,6 +140,20 @@ class DataController extends Controller
                 'ereven_data' => $ereven_data,
                 'tweleve_data' => $tweleve_data
             ],
+            'month' => [
+                'one_month' => date('m'),
+                'two_month' => date('m', strtotime('+1 month')),
+                'three_month' => date('m', strtotime('+2 month')),
+                'four_month' => date('m', strtotime('+3 month')),
+                'five_month' => date('m', strtotime('+4 month')),
+                'six_month' => date('m', strtotime('+5 month')),
+                'seven_month' => date('m', strtotime('+6 month')),
+                'eight_month' => date('m', strtotime('+7 month')),
+                'nine_month' => date('m', strtotime('+8 month')),
+                'ten_month' => date('m', strtotime('+9 month')),
+                'ereven_month' => date('m', strtotime('+10 month')),
+                'tweleve_month' => date('m', strtotime('+11 month'))
+            ]
         ]);
     }
 }
