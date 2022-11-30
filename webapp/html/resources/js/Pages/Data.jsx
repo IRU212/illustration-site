@@ -167,7 +167,7 @@ function Data(props) {
 
     useEffect(() => {
         axios
-            .get(`http://localhost/api/data/24/index`)
+            .get(`http://localhost/api/data/${userId}/index`)
             .then((res) => {
                 setData(res.data)
             })

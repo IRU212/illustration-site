@@ -5,6 +5,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import SettingsIcon from '@mui/icons-material/Settings';
+import SignalCellularAltIcon from '@mui/icons-material/SignalCellularAlt';
 
 function SideHeader(props) {
 
@@ -14,7 +15,7 @@ function SideHeader(props) {
         position: fixed;
         top: 55px;
         left: 0;
-        border-right: 1px solid #ccc;
+        overflow-y: scroll;
         padding: 30px 0;
     `
 
@@ -83,6 +84,20 @@ function SideHeader(props) {
                 >
                     <a href={`https://illustration-site.herokuapp.com/like/list/${userId}`}>
                         LIKE LIST
+                    </a>
+                </div>
+            </SideDiv>
+            <SideDiv>
+                <div>
+                    <SignalCellularAltIcon
+                        style={{fontSize: "1.7rem"}}
+                    />
+                </div>
+                <div
+                    style={{fontSize: "1.5rem",fontWeight:600,margin:"2px 0 0 10px"}}
+                >
+                    <a href={`http://localhost/data`}>
+                        DATA
                     </a>
                 </div>
             </SideDiv>
